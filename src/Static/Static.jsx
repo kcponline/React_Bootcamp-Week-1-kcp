@@ -1,4 +1,7 @@
 // import React, { Component } from 'react';
+// remove { Component } because this is static
+// then inject the html code inside the div container
+// the final part is to export the const Static
 import React from 'react';
 
 const Static = () => {
