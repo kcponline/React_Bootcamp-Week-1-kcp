@@ -19,17 +19,19 @@ const Static = () => {
 const Header = () => {
 	return (
 		<header class="main-header">
-			<HeaderLogo />
+			<HeaderLogo 
+				title={"EV Angel"}
+			/>
 			<Navigation />
 		</header>
 	);
 }
 
-const HeaderLogo = () => {
+const HeaderLogo = (props) => {
 	return (
 		<h1 class="name">
 			<a href="#">
-				EV Angel
+				{props.title}
 			</a>
 		</h1>
 	);
