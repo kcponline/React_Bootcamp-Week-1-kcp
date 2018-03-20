@@ -80,24 +80,28 @@ const Nav02 = (navprops) => {
 const Banner = () => {
 	return (
 		<div className="banner">
-			<Headline />
-			<Tagline />
+			<Headline 
+				title={"EV Angel"}
+			/>
+			<Tagline 
+				title={"Helping you to get your EV Charging"}
+			/>
 		</div>
 	);
 }
 
-const Headline = () => {
+const Headline = (bannerprops) => {
 	return (
 		<h1 className="headline">
-			EV Angel
+			{bannerprops.title}
 		</h1>
 	);
 }
 
-const Tagline = () => {
+const Tagline = (bannerprops) => {
 	return (
 	  	<span className="tagline">
-	  		Helping you to get your EV Charging
+	  		{bannerprops.title}
 	  	</span>
 	);
 }
