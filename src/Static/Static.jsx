@@ -7,17 +7,11 @@ import React from 'react';
 const Static = () => {
 	return (
 		<div>
-		
 			<Header />
-
 			<Banner />
-
 			<ChargerList />
-
 			<StallList />
-
 			<Footer />
-
 		</div>
 	);
 }
@@ -25,21 +19,73 @@ const Static = () => {
 const Header = () => {
 	return (
 		<header class="main-header">
-			<h1 class="name"><a href="#">EV Angel</a></h1>
-	  		<ul class="main-nav">
-	        <li><a href="#">History</a></li>
-	        <li><a href="#">Account</a></li>
-	  		</ul>
+			<HeaderLogo />
+			<Navigation />
 		</header>
+	);
+}
+
+const HeaderLogo = () => {
+	return (
+		<h1 class="name">
+			<a href="#">
+				EV Angel
+			</a>
+		</h1>
+	);
+}
+
+const Navigation = () => {
+	return (
+		<ul class="main-nav">
+	        <Nav01 />
+	        <Nav02 />
+	  	</ul>
+	);
+}
+
+const Nav01 = () => {
+	return (
+		<li>
+			<a href="#">
+				History
+			</a>
+		</li>
+	);
+}
+
+const Nav02 = () => {
+	return (
+		<li>
+			<a href="#">
+				Account
+			</a>
+		</li>
 	);
 }
 
 const Banner = () => {
 	return (
 		<div class="banner">
-			<h1 class="headline">EV Helper</h1>
-	  		<span class="tagline">Helping you to get your EV Charging</span>
+			<Headline />
+			<Tagline />
 		</div>
+	);
+}
+
+const Headline = () => {
+	return (
+		<h1 class="headline">
+			EV Angel
+		</h1>
+	);
+}
+
+const Tagline = () => {
+	return (
+	  	<span class="tagline">
+	  		Helping you to get your EV Charging
+	  	</span>
 	);
 }
 
