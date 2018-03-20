@@ -92,88 +92,263 @@ const Tagline = () => {
 const ChargerList = () => {
 	return (
 		<div class="row">
-			<div class="col">
-				<h2>CHARGER 1</h2>
-	  			<p>STALL 1</p>
-	  			<button class="btn-blue"><a href="#">SELECT</a></button>
-			</div>
-			<div class="col">
-				<h2>CHARGER 2</h2>
-	  			<p>OPEN</p>
-	  			<button class="btn-blue"><a href="#">SELECT</a></button>
-			</div>
-			<div class="col">
-				<h2>CHARGER 3</h2>
-	  			<p>RIGHT 2</p>
-	  			<button class="btn-blue"><a href="#">SELECT</a></button>
-			</div>
+			<Charger01 />
+			<Charger02 />
+			<Charger03 />
 		</div>
 	);
 }
 
-const StallList = () => {
+const Charger01 = () => {
 	return (
-		<div class="row">
-			<div class="col">
-				<h2>LEFT 2</h2>
-	  			<p>CHARGER:NONE</p>
-	  			<p>STALL:OPEN</p>
-	  			<p>START:N/A</p>
-	  			<p>EVANGEL:KENT</p>
-	  			<button class="btn-blue"><a href="#">SELECT</a></button>
-			</div>
-			<div class="col">
-				<h2>LEFT 1</h2>
-	  			<p>CHARGER:NONE</p>
-	  			<p>STALL:OPEN</p>
-	  			<p>START:N/A</p>
-	  			<p>EVANGEL:KENT</p>
-	  			<button class="btn-blue"><a href="#">SELECT</a></button>
-			</div>
-			<div class="col">
-				<h2>STALL 1</h2>
-	  			<p>CHARGER:1</p>
-	  			<p>CHARGING</p>
-	  			<p>START: 3:30PM</p>
-	  			<p>EVANGEL:KENT</p>
-	  			<button class="btn-blue"><a href="#">SELECT</a></button>
-			</div>
-			<div class="col">
-				<h2>STALL 2</h2>
-	  			<p>CHARGER:3</p>
-	  			<p>FINISHED</p>
-	  			<p>START: 2:30PM</p>
-	  			<p>EVANGEL:KENT</p>
-	  			<button class="btn-blue"><a href="#">SELECT</a></button>
-			</div>
-			<div class="col">
-				<h2>STALL 3</h2>
-	  			<p>CHARGER:NONE</p>
-	  			<p>WAITING</p>
-	  			<p>START: 5:20PM</p>
-	  			<p>EVANGEL:KENT</p>
-	  			<button class="btn-blue"><a href="#">SELECT</a></button>
-			</div>
-			<div class="col">
-				<h2>RIGHT 1</h2>
-	  			<p>CHARGER:NONE</p>
-	  			<p>WAITING</p>
-	  			<p>START: 4:45PM</p>
-	  			<p>EVANGEL:KENT</p>
-	  			<button class="btn-blue"><a href="#">SELECT</a></button>
-			</div>
-			<div class="col">
-				<h2>RIGHT 2</h2>
-	  			<p>CHARGER:3</p>
-	  			<p>CHARGING</p>
-	  			<p>START: 4:25PM</p>
-	  			<p>EVANGEL:KENT</p>
-	  			<button class="btn-blue"><a href="#">SELECT</a></button>
-			</div>
-			
+		<div class="col">
+			<h2>
+				CHARGER 1
+			</h2>
+	  		<p>
+	  			STALL 1
+	  		</p>
+	  		<button class="btn-blue">
+	  			<a href="#">
+	  				SELECT
+	  			</a>
+	  		</button>
 		</div>
 	);
 }
+const Charger02 = () => {
+	return (
+		<div class="col">
+			<h2>
+				CHARGER 2
+			</h2>
+	  		<p>
+	  			OPEN
+	  		</p>
+	  		<button class="btn-blue">
+	  			<a href="#">
+	  				SELECT
+	  			</a>
+	  		</button>
+		</div>
+	);
+}
+const Charger03 = () => {
+	return (
+		<div class="col">
+			<h2>
+				CHARGER 3
+			</h2>
+	  		<p>
+	  			RIGHT 2
+	  		</p>
+	  		<button class="btn-blue">
+	  			<a href="#">
+	  				SELECT
+	  			</a>
+	  		</button>
+		</div>
+	);
+}
+
+
+const StallList = () => {
+	return (
+		<div class="row">
+			<Stall01 />
+			<Stall02 />
+			<Stall03 />
+			<Stall04 />
+			<Stall05 />
+			<Stall06 />
+			<Stall07 />
+		</div>
+	);
+}
+
+const Stall01 = () => {
+	return (
+		<div class="col">
+			<h2>
+				LEFT 2
+			</h2>
+	  		<p>
+	  			CHARGER:NONE
+	  		</p>
+	  		<p>
+	  			STALL:OPEN
+	  		</p>
+ 			<p>
+ 				START:N/A
+ 			</p>
+  			<p>
+  				EVANGEL:KENT
+  			</p>
+	  		<button class="btn-blue">
+	  			<a href="#">
+	  				SELECT
+	  			</a>
+	  		</button>
+		</div>
+	);
+}
+const Stall02 = () => {
+	return (
+		<div class="col">
+			<h2>
+				LEFT 2
+			</h2>
+	  		<p>
+	  			CHARGER:NONE
+	  		</p>
+	  		<p>
+	  			STALL:OPEN
+	  		</p>
+ 			<p>
+ 				START:N/A
+ 			</p>
+  			<p>
+  				EVANGEL:KENT
+  			</p>
+	  		<button class="btn-blue">
+	  			<a href="#">
+	  				SELECT
+	  			</a>
+	  		</button>
+		</div>
+	);
+}
+const Stall03 = () => {
+	return (
+		<div class="col">
+			<h2>
+				STALL 1
+			</h2>
+	  		<p>
+	  			CHARGER:1
+	  		</p>
+	  		<p>
+	  			CHARGING
+	  		</p>
+ 			<p>
+ 				START: 3:30PM
+ 			</p>
+  			<p>
+  				EVANGEL:KENT
+  			</p>
+	  		<button class="btn-blue">
+	  			<a href="#">
+	  				SELECT
+	  			</a>
+	  		</button>
+		</div>
+	);
+}
+const Stall04 = () => {
+	return (
+		<div class="col">
+			<h2>
+				STALL 2
+			</h2>
+	  		<p>
+	  			CHARGER:2
+	  		</p>
+	  		<p>
+	  			FINISHED
+	  		</p>
+ 			<p>
+ 				START: 2:30PM
+ 			</p>
+  			<p>
+  				EVANGEL:KENT
+  			</p>
+	  		<button class="btn-blue">
+	  			<a href="#">
+	  				SELECT
+	  			</a>
+	  		</button>
+		</div>
+	);
+}
+const Stall05 = () => {
+	return (
+		<div class="col">
+			<h2>
+				STALL 3
+			</h2>
+	  		<p>
+	  			CHARGER:NONE
+	  		</p>
+	  		<p>
+	  			WAITING
+	  		</p>
+ 			<p>
+ 				START: 5:20PM
+ 			</p>
+  			<p>
+  				EVANGEL:KENT
+  			</p>
+	  		<button class="btn-blue">
+	  			<a href="#">
+	  				SELECT
+	  			</a>
+	  		</button>
+		</div>
+	);
+}
+const Stall06 = () => {
+	return (
+		<div class="col">
+			<h2>
+				RIGHT 1
+			</h2>
+	  		<p>
+	  			CHARGER:NONE
+	  		</p>
+	  		<p>
+	  			WAITING
+	  		</p>
+ 			<p>
+ 				START: 4:45PM
+ 			</p>
+  			<p>
+  				EVANGEL:KENT
+  			</p>
+	  		<button class="btn-blue">
+	  			<a href="#">
+	  				SELECT
+	  			</a>
+	  		</button>
+		</div>
+	);
+}
+const Stall07 = () => {
+	return (
+		<div class="col">
+			<h2>
+				RIGHT 2
+			</h2>
+	  		<p>
+	  			CHARGER:3
+	  		</p>
+	  		<p>
+	  			CHARGING
+	  		</p>
+ 			<p>
+ 				START: 4:25PM
+ 			</p>
+  			<p>
+  				EVANGEL:KENT
+  			</p>
+	  		<button class="btn-blue">
+	  			<a href="#">
+	  				SELECT
+	  			</a>
+	  		</button>
+		</div>
+	);
+}
+
 
 const Footer = () => {
 	return (
