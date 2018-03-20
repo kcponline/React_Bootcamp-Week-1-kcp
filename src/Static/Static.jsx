@@ -18,9 +18,11 @@ const Static = () => {
 
 const Header = () => {
 	return (
-		<header class="main-header">
+		<header className="main-header">
 			<HeaderLogo 
 				title={"EV Angel"}
+				href={"http://www.yahoo.com"}
+				target={"_blank"}
 			/>
 			<Navigation />
 		</header>
@@ -28,9 +30,10 @@ const Header = () => {
 }
 
 const HeaderLogo = (props) => {
+	console.log('parent properties', props);
 	return (
-		<h1 class="name">
-			<a href="#">
+		<h1 className="name">
+			<a href={props.href} target="props.target">
 				{props.title}
 			</a>
 		</h1>
@@ -39,28 +42,36 @@ const HeaderLogo = (props) => {
 
 const Navigation = () => {
 	return (
-		<ul class="main-nav">
-	        <Nav01 />
-	        <Nav02 />
+		<ul className="main-nav">
+	        <Nav01 
+	        	title={"History"}
+	        	href={"http://www.history.com"}
+	        	target={"_blank"}
+	        />
+	        <Nav02 
+	        	title={"Account"}
+	        	href={"http://www.google.com"}
+	        	target={"_blank"}
+	        />
 	  	</ul>
 	);
 }
 
-const Nav01 = () => {
+const Nav01 = (navprops) => {
 	return (
 		<li>
-			<a href="#">
-				History
+			<a href={navprops.href} target={navprops.target}>
+				{navprops.title}
 			</a>
 		</li>
 	);
 }
-
-const Nav02 = () => {
+// notice that the reusability with only the const name being different
+const Nav02 = (navprops) => {
 	return (
 		<li>
-			<a href="#">
-				Account
+			<a href={navprops.href} target={navprops.target}>
+				{navprops.title}
 			</a>
 		</li>
 	);
@@ -68,7 +79,7 @@ const Nav02 = () => {
 
 const Banner = () => {
 	return (
-		<div class="banner">
+		<div className="banner">
 			<Headline />
 			<Tagline />
 		</div>
@@ -77,7 +88,7 @@ const Banner = () => {
 
 const Headline = () => {
 	return (
-		<h1 class="headline">
+		<h1 className="headline">
 			EV Angel
 		</h1>
 	);
@@ -85,7 +96,7 @@ const Headline = () => {
 
 const Tagline = () => {
 	return (
-	  	<span class="tagline">
+	  	<span className="tagline">
 	  		Helping you to get your EV Charging
 	  	</span>
 	);
@@ -93,7 +104,7 @@ const Tagline = () => {
 
 const ChargerList = () => {
 	return (
-		<div class="row">
+		<div className="row">
 			<Charger01 />
 			<Charger02 />
 			<Charger03 />
@@ -103,14 +114,14 @@ const ChargerList = () => {
 
 const Charger01 = () => {
 	return (
-		<div class="col">
+		<div className="col">
 			<h2>
 				CHARGER 1
 			</h2>
 	  		<p>
 	  			STALL 1
 	  		</p>
-	  		<button class="btn-blue">
+	  		<button className="btn-blue">
 	  			<a href="#">
 	  				SELECT
 	  			</a>
@@ -120,14 +131,14 @@ const Charger01 = () => {
 }
 const Charger02 = () => {
 	return (
-		<div class="col">
+		<div className="col">
 			<h2>
 				CHARGER 2
 			</h2>
 	  		<p>
 	  			OPEN
 	  		</p>
-	  		<button class="btn-blue">
+	  		<button className="btn-blue">
 	  			<a href="#">
 	  				SELECT
 	  			</a>
@@ -137,14 +148,14 @@ const Charger02 = () => {
 }
 const Charger03 = () => {
 	return (
-		<div class="col">
+		<div className="col">
 			<h2>
 				CHARGER 3
 			</h2>
 	  		<p>
 	  			RIGHT 2
 	  		</p>
-	  		<button class="btn-blue">
+	  		<button className="btn-blue">
 	  			<a href="#">
 	  				SELECT
 	  			</a>
@@ -156,7 +167,7 @@ const Charger03 = () => {
 
 const StallList = () => {
 	return (
-		<div class="row">
+		<div className="row">
 			<Stall01 />
 			<Stall02 />
 			<Stall03 />
@@ -170,7 +181,7 @@ const StallList = () => {
 
 const Stall01 = () => {
 	return (
-		<div class="col">
+		<div className="col">
 			<h2>
 				LEFT 2
 			</h2>
@@ -186,7 +197,7 @@ const Stall01 = () => {
   			<p>
   				EVANGEL:KENT
   			</p>
-	  		<button class="btn-blue">
+	  		<button className="btn-blue">
 	  			<a href="#">
 	  				SELECT
 	  			</a>
@@ -196,7 +207,7 @@ const Stall01 = () => {
 }
 const Stall02 = () => {
 	return (
-		<div class="col">
+		<div className="col">
 			<h2>
 				LEFT 2
 			</h2>
@@ -212,7 +223,7 @@ const Stall02 = () => {
   			<p>
   				EVANGEL:KENT
   			</p>
-	  		<button class="btn-blue">
+	  		<button className="btn-blue">
 	  			<a href="#">
 	  				SELECT
 	  			</a>
@@ -222,7 +233,7 @@ const Stall02 = () => {
 }
 const Stall03 = () => {
 	return (
-		<div class="col">
+		<div className="col">
 			<h2>
 				STALL 1
 			</h2>
@@ -238,7 +249,7 @@ const Stall03 = () => {
   			<p>
   				EVANGEL:KENT
   			</p>
-	  		<button class="btn-blue">
+	  		<button className="btn-blue">
 	  			<a href="#">
 	  				SELECT
 	  			</a>
@@ -248,7 +259,7 @@ const Stall03 = () => {
 }
 const Stall04 = () => {
 	return (
-		<div class="col">
+		<div className="col">
 			<h2>
 				STALL 2
 			</h2>
@@ -264,7 +275,7 @@ const Stall04 = () => {
   			<p>
   				EVANGEL:KENT
   			</p>
-	  		<button class="btn-blue">
+	  		<button className="btn-blue">
 	  			<a href="#">
 	  				SELECT
 	  			</a>
@@ -274,7 +285,7 @@ const Stall04 = () => {
 }
 const Stall05 = () => {
 	return (
-		<div class="col">
+		<div className="col">
 			<h2>
 				STALL 3
 			</h2>
@@ -290,7 +301,7 @@ const Stall05 = () => {
   			<p>
   				EVANGEL:KENT
   			</p>
-	  		<button class="btn-blue">
+	  		<button className="btn-blue">
 	  			<a href="#">
 	  				SELECT
 	  			</a>
@@ -300,7 +311,7 @@ const Stall05 = () => {
 }
 const Stall06 = () => {
 	return (
-		<div class="col">
+		<div className="col">
 			<h2>
 				RIGHT 1
 			</h2>
@@ -316,7 +327,7 @@ const Stall06 = () => {
   			<p>
   				EVANGEL:KENT
   			</p>
-	  		<button class="btn-blue">
+	  		<button className="btn-blue">
 	  			<a href="#">
 	  				SELECT
 	  			</a>
@@ -326,7 +337,7 @@ const Stall06 = () => {
 }
 const Stall07 = () => {
 	return (
-		<div class="col">
+		<div className="col">
 			<h2>
 				RIGHT 2
 			</h2>
@@ -342,7 +353,7 @@ const Stall07 = () => {
   			<p>
   				EVANGEL:KENT
   			</p>
-	  		<button class="btn-blue">
+	  		<button className="btn-blue">
 	  			<a href="#">
 	  				SELECT
 	  			</a>
@@ -354,7 +365,7 @@ const Stall07 = () => {
 
 const Footer = () => {
 	return (
-		<footer class="main-footer">
+		<footer className="main-footer">
 			<span>&copy;2018 React-CBC EV Helper</span>
 		</footer>
 	);
