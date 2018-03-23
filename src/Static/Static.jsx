@@ -109,262 +109,323 @@ const Tagline = (bannerprops) => {
 const ChargerList = () => {
 	return (
 		<div className="row">
-			<Charger01 />
-			<Charger02 />
-			<Charger03 />
+			<Charger 
+				station={"CHARGER 1"}
+				chargerStatus={"STALL 1"}
+				buttonName={"SELECT"}
+			/>
+			<Charger 
+				station={"CHARGER 2"}
+				chargerStatus={"OPEN"}
+				buttonName={"SELECT"}
+			/>
+			<Charger 
+				station={"CHARGER 3"}
+				chargerStatus={"RIGHT 2"}
+				buttonName={"SELECT"}
+			/>
 		</div>
 	);
 }
 
-const Charger01 = () => {
+const Charger = (chargerprops) => {
 	return (
 		<div className="col">
 			<h2>
-				CHARGER 1
+				{chargerprops.station}
 			</h2>
 	  		<p>
-	  			STALL 1
+	  			{chargerprops.chargerStatus}
 	  		</p>
 	  		<button className="btn-blue">
 	  			<a href="#">
-	  				SELECT
+	  				{chargerprops.buttonName}
 	  			</a>
 	  		</button>
 		</div>
 	);
 }
-const Charger02 = () => {
-	return (
-		<div className="col">
-			<h2>
-				CHARGER 2
-			</h2>
-	  		<p>
-	  			OPEN
-	  		</p>
-	  		<button className="btn-blue">
-	  			<a href="#">
-	  				SELECT
-	  			</a>
-	  		</button>
-		</div>
-	);
-}
-const Charger03 = () => {
-	return (
-		<div className="col">
-			<h2>
-				CHARGER 3
-			</h2>
-	  		<p>
-	  			RIGHT 2
-	  		</p>
-	  		<button className="btn-blue">
-	  			<a href="#">
-	  				SELECT
-	  			</a>
-	  		</button>
-		</div>
-	);
-}
+// const Charger = () => {
+// 	return (
+// 		<div className="col">
+// 			<h2>
+// 				CHARGER 2
+// 			</h2>
+// 	  		<p>
+// 	  			OPEN
+// 	  		</p>
+// 	  		<button className="btn-blue">
+// 	  			<a href="#">
+// 	  				SELECT
+// 	  			</a>
+// 	  		</button>
+// 		</div>
+// 	);
+// }
+// const Charger = () => {
+// 	return (
+// 		<div className="col">
+// 			<h2>
+// 				CHARGER 3
+// 			</h2>
+// 	  		<p>
+// 	  			RIGHT 2
+// 	  		</p>
+// 	  		<button className="btn-blue">
+// 	  			<a href="#">
+// 	  				SELECT
+// 	  			</a>
+// 	  		</button>
+// 		</div>
+// 	);
+// }
 
 
 const StallList = () => {
 	return (
 		<div className="row">
-			<Stall01 />
-			<Stall02 />
-			<Stall03 />
-			<Stall04 />
-			<Stall05 />
-			<Stall06 />
-			<Stall07 />
+			<Stall 
+				stallName={"LEFT 2"}
+				chargerName={"CHARGER:NONE"}
+				stallStatus={"STALL:OPEN"}
+				startTime={"START:N/A"}
+				evangelName={"EVANGEL:KENT"}
+				buttonName={"SELECT"}
+			/>
+			<Stall 
+				stallName={"LEFT 1"}
+				chargerName={"CHARGER:NONE"}
+				stallStatus={"STALL:OPEN"}
+				startTime={"START:N/A"}
+				evangelName={"EVANGEL:KENT"}
+				buttonName={"SELECT"}			
+			/>
+			<Stall 
+				stallName={"STALL 1"}
+				chargerName={"CHARGER:1"}
+				stallStatus={"CHARGING"}
+				startTime={"START: 3:30PM"}
+				evangelName={"EVANGEL:KENT"}
+				buttonName={"SELECT"}			
+			/>
+			<Stall 
+				stallName={"STALL 2"}
+				chargerName={"CHARGER:2"}
+				stallStatus={"FINISHED"}
+				startTime={"START: 2:30PM"}
+				evangelName={"EVANGEL:KENT"}
+				buttonName={"SELECT"}			
+			/>
+			<Stall 
+				stallName={"STALL 3"}
+				chargerName={"CHARGER:NONE"}
+				stallStatus={"WAITING"}
+				startTime={"START: 5:20PM"}
+				evangelName={"EVANGEL:KENT"}
+				buttonName={"SELECT"}			
+			/>
+			<Stall 
+				stallName={"RIGHT 1"}
+				chargerName={"CHARGER:NONE"}
+				stallStatus={"WAITING"}
+				startTime={"START: 4:45PM"}
+				evangelName={"EVANGEL:KENT"}
+				buttonName={"SELECT"}			
+			/>
+			<Stall 
+				stallName={"RIGHT 2"}
+				chargerName={"CHARGER:3"}
+				stallStatus={"CHARGING"}
+				startTime={"START: 4:25PM"}
+				evangelName={"EVANGEL:KENT"}
+				buttonName={"SELECT"}			
+			/>
 		</div>
 	);
 }
 
-const Stall01 = () => {
+const Stall = (stallprops) => {
 	return (
 		<div className="col">
 			<h2>
-				LEFT 2
+				{stallprops.stallName}
 			</h2>
 	  		<p>
-	  			CHARGER:NONE
+	  			{stallprops.chargerName}
 	  		</p>
 	  		<p>
-	  			STALL:OPEN
+	  			{stallprops.stallStatus}
 	  		</p>
  			<p>
- 				START:N/A
+ 				{stallprops.startTime}
  			</p>
   			<p>
-  				EVANGEL:KENT
+  				{stallprops.evangelName}
   			</p>
 	  		<button className="btn-blue">
 	  			<a href="#">
-	  				SELECT
+	  				{stallprops.buttonName}
 	  			</a>
 	  		</button>
 		</div>
 	);
 }
-const Stall02 = () => {
-	return (
-		<div className="col">
-			<h2>
-				LEFT 2
-			</h2>
-	  		<p>
-	  			CHARGER:NONE
-	  		</p>
-	  		<p>
-	  			STALL:OPEN
-	  		</p>
- 			<p>
- 				START:N/A
- 			</p>
-  			<p>
-  				EVANGEL:KENT
-  			</p>
-	  		<button className="btn-blue">
-	  			<a href="#">
-	  				SELECT
-	  			</a>
-	  		</button>
-		</div>
-	);
-}
-const Stall03 = () => {
-	return (
-		<div className="col">
-			<h2>
-				STALL 1
-			</h2>
-	  		<p>
-	  			CHARGER:1
-	  		</p>
-	  		<p>
-	  			CHARGING
-	  		</p>
- 			<p>
- 				START: 3:30PM
- 			</p>
-  			<p>
-  				EVANGEL:KENT
-  			</p>
-	  		<button className="btn-blue">
-	  			<a href="#">
-	  				SELECT
-	  			</a>
-	  		</button>
-		</div>
-	);
-}
-const Stall04 = () => {
-	return (
-		<div className="col">
-			<h2>
-				STALL 2
-			</h2>
-	  		<p>
-	  			CHARGER:2
-	  		</p>
-	  		<p>
-	  			FINISHED
-	  		</p>
- 			<p>
- 				START: 2:30PM
- 			</p>
-  			<p>
-  				EVANGEL:KENT
-  			</p>
-	  		<button className="btn-blue">
-	  			<a href="#">
-	  				SELECT
-	  			</a>
-	  		</button>
-		</div>
-	);
-}
-const Stall05 = () => {
-	return (
-		<div className="col">
-			<h2>
-				STALL 3
-			</h2>
-	  		<p>
-	  			CHARGER:NONE
-	  		</p>
-	  		<p>
-	  			WAITING
-	  		</p>
- 			<p>
- 				START: 5:20PM
- 			</p>
-  			<p>
-  				EVANGEL:KENT
-  			</p>
-	  		<button className="btn-blue">
-	  			<a href="#">
-	  				SELECT
-	  			</a>
-	  		</button>
-		</div>
-	);
-}
-const Stall06 = () => {
-	return (
-		<div className="col">
-			<h2>
-				RIGHT 1
-			</h2>
-	  		<p>
-	  			CHARGER:NONE
-	  		</p>
-	  		<p>
-	  			WAITING
-	  		</p>
- 			<p>
- 				START: 4:45PM
- 			</p>
-  			<p>
-  				EVANGEL:KENT
-  			</p>
-	  		<button className="btn-blue">
-	  			<a href="#">
-	  				SELECT
-	  			</a>
-	  		</button>
-		</div>
-	);
-}
-const Stall07 = () => {
-	return (
-		<div className="col">
-			<h2>
-				RIGHT 2
-			</h2>
-	  		<p>
-	  			CHARGER:3
-	  		</p>
-	  		<p>
-	  			CHARGING
-	  		</p>
- 			<p>
- 				START: 4:25PM
- 			</p>
-  			<p>
-  				EVANGEL:KENT
-  			</p>
-	  		<button className="btn-blue">
-	  			<a href="#">
-	  				SELECT
-	  			</a>
-	  		</button>
-		</div>
-	);
-}
+// const Stall02 = () => {
+// 	return (
+// 		<div className="col">
+// 			<h2>
+// 				LEFT 1
+// 			</h2>
+// 	  		<p>
+// 	  			CHARGER:NONE
+// 	  		</p>
+// 	  		<p>
+// 	  			STALL:OPEN
+// 	  		</p>
+//  			<p>
+//  				START:N/A
+//  			</p>
+//   			<p>
+//   				EVANGEL:KENT
+//   			</p>
+// 	  		<button className="btn-blue">
+// 	  			<a href="#">
+// 	  				SELECT
+// 	  			</a>
+// 	  		</button>
+// 		</div>
+// 	);
+// }
+// const Stall03 = () => {
+// 	return (
+// 		<div className="col">
+// 			<h2>
+// 				STALL 1
+// 			</h2>
+// 	  		<p>
+// 	  			CHARGER:1
+// 	  		</p>
+// 	  		<p>
+// 	  			CHARGING
+// 	  		</p>
+//  			<p>
+//  				START: 3:30PM
+//  			</p>
+//   			<p>
+//   				EVANGEL:KENT
+//   			</p>
+// 	  		<button className="btn-blue">
+// 	  			<a href="#">
+// 	  				SELECT
+// 	  			</a>
+// 	  		</button>
+// 		</div>
+// 	);
+// }
+// const Stall04 = () => {
+// 	return (
+// 		<div className="col">
+// 			<h2>
+// 				STALL 2
+// 			</h2>
+// 	  		<p>
+// 	  			CHARGER:2
+// 	  		</p>
+// 	  		<p>
+// 	  			FINISHED
+// 	  		</p>
+//  			<p>
+//  				START: 2:30PM
+//  			</p>
+//   			<p>
+//   				EVANGEL:KENT
+//   			</p>
+// 	  		<button className="btn-blue">
+// 	  			<a href="#">
+// 	  				SELECT
+// 	  			</a>
+// 	  		</button>
+// 		</div>
+// 	);
+// }
+// const Stall05 = () => {
+// 	return (
+// 		<div className="col">
+// 			<h2>
+// 				STALL 3
+// 			</h2>
+// 	  		<p>
+// 	  			CHARGER:NONE
+// 	  		</p>
+// 	  		<p>
+// 	  			WAITING
+// 	  		</p>
+//  			<p>
+//  				START: 5:20PM
+//  			</p>
+//   			<p>
+//   				EVANGEL:KENT
+//   			</p>
+// 	  		<button className="btn-blue">
+// 	  			<a href="#">
+// 	  				SELECT
+// 	  			</a>
+// 	  		</button>
+// 		</div>
+// 	);
+// }
+// const Stall06 = () => {
+// 	return (
+// 		<div className="col">
+// 			<h2>
+// 				RIGHT 1
+// 			</h2>
+// 	  		<p>
+// 	  			CHARGER:NONE
+// 	  		</p>
+// 	  		<p>
+// 	  			WAITING
+// 	  		</p>
+//  			<p>
+//  				START: 4:45PM
+//  			</p>
+//   			<p>
+//   				EVANGEL:KENT
+//   			</p>
+// 	  		<button className="btn-blue">
+// 	  			<a href="#">
+// 	  				SELECT
+// 	  			</a>
+// 	  		</button>
+// 		</div>
+// 	);
+// }
+// const Stall07 = () => {
+// 	return (
+// 		<div className="col">
+// 			<h2>
+// 				RIGHT 2
+// 			</h2>
+// 	  		<p>
+// 	  			CHARGER:3
+// 	  		</p>
+// 	  		<p>
+// 	  			CHARGING
+// 	  		</p>
+//  			<p>
+//  				START: 4:25PM
+//  			</p>
+//   			<p>
+//   				EVANGEL:KENT
+//   			</p>
+// 	  		<button className="btn-blue">
+// 	  			<a href="#">
+// 	  				SELECT
+// 	  			</a>
+// 	  		</button>
+// 		</div>
+// 	);
+// }
 
 
 const Footer = () => {
