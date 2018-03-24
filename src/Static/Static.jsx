@@ -43,12 +43,12 @@ const HeaderLogo = (props) => {
 const Navigation = () => {
 	return (
 		<ul className="main-nav">
-	        <Nav01 
+	        <NavLink 
 	        	title={"History"}
 	        	href={"http://www.history.com"}
 	        	target={"_blank"}
 	        />
-	        <Nav02 
+	        <NavLink 
 	        	title={"Account"}
 	        	href={"http://www.google.com"}
 	        	target={"_blank"}
@@ -57,7 +57,7 @@ const Navigation = () => {
 	);
 }
 
-const Nav01 = (navprops) => {
+const NavLink = (navprops) => {
 	return (
 		<li>
 			<a href={navprops.href} target={navprops.target}>
@@ -67,15 +67,15 @@ const Nav01 = (navprops) => {
 	);
 }
 // notice that the reusability with only the const name being different
-const Nav02 = (navprops) => {
-	return (
-		<li>
-			<a href={navprops.href} target={navprops.target}>
-				{navprops.title}
-			</a>
-		</li>
-	);
-}
+// const Nav = (navprops) => {
+// 	return (
+// 		<li>
+// 			<a href={navprops.href} target={navprops.target}>
+// 				{navprops.title}
+// 			</a>
+// 		</li>
+// 	);
+// }
 
 const Banner = () => {
 	return (
@@ -431,7 +431,7 @@ const Stall = (stallprops) => {
 const Footer = () => {
 	return (
 		<footer className="main-footer">
-			<span>&copy;2018 React-CBC EV Helper</span>
+			<span>&copy;2018 React-CBC EV Angel</span>
 		</footer>
 	);
 }
