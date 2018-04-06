@@ -3,17 +3,44 @@
 // then inject the html code inside the div container
 // the final part is to export the const Static
 import React from 'react';
+// now switch the stateless static variable component to stateful by calling a method of React
+class Static extends React.Component {
+	// in ES6, simply define property instead of js syntax like constructor() {}
+	state = {
+		nowOpenCharger: null,
+		nowOpenStall: null,
+		openChargerCount: 0,
+		openStallCount: 0,
+		chargers: [
+			{
+				station: 'CHARGER 1',
+				chargerStatus: 'STALL 1',
+				select: false
+			},
+			{
+				station: 'CHARGER 2',
+				chargerStatus: 'OPEN',
+				select: false
+			},
+			{
+				station: 'CHARGER 3',
+				chargerStatus: 'RIGHT 2',
+				select: false
+			},
+		]
+	};
 
-const Static = () => {
-	return (
-		<div>
-			<Header />
-			<Banner />
-			<ChargerList />
-			<StallList />
-			<Footer />
-		</div>
-	);
+	render() {
+		return (
+			<div>
+				<Header />
+				<Banner />
+				<ChargerList />
+				<StallList />
+				<Footer />
+			</div>
+		);
+	}
 }
 
 const Header = () => {
