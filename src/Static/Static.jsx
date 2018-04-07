@@ -3,96 +3,73 @@
 // then inject the html code inside the div container
 // the final part is to export the const Static
 import React from 'react';
-// now switch the stateless static variable component to stateful by calling a method of React
-class Static extends React.Component {
-	// in ES6, simply define property instead of js syntax like constructor() {}
-	state = {
-		nowOpenCharger: null,
-		nowOpenStall: null,
-		openChargerCount: 0,
-		openStallCount: 0,
-		chargers: [
-			{
-				station: 'CHARGER 1',
-				chargerStatus: 'STALL 1',
-				select: false
-			},
-			{
-				station: 'CHARGER 2',
-				chargerStatus: 'OPEN',
-				select: false
-			},
-			{
-				station: 'CHARGER 3',
-				chargerStatus: 'RIGHT 2',
-				select: false
-			},
-		]
-	};
 
-	render() {
-		return (
-			<div>
-				<Header />
-				<Banner />
-				<ChargerList />
-				<StallList />
-				<Footer />
-			</div>
-		);
-	}
+const Static = () => {
+	return (
+		<div>
+			<Header />
+			<Banner />
+			<Footer />
+		</div>
+	);
 }
-
+// static component
 const Header = () => {
 	return (
 		<header className="main-header">
-			<HeaderLogo 
-				title={"EV Angel"}
-				href={"http://www.yahoo.com"}
-				target={"_blank"}
-			/>
-			<Navigation />
+			<ul className="name">
+				OPEN CHARGER: 2
+			</ul>
+			<ul className="name">
+				OPEN STALL: L2 L1
+			</ul>
+			<ul className="name">
+				OPEN CHARGER COUNT: 1
+			</ul>
+			<ul className="name">
+				OPEN CHARGER COUNT: 2
+			</ul>
 		</header>
 	);
 }
 
-const HeaderLogo = (props) => {
-	console.log('parent properties', props);
-	return (
-		<h1 className="name">
-			<a href={props.href} target="props.target">
-				{props.title}
-			</a>
-		</h1>
-	);
-}
+// const HeaderLogo = (props) => {
+// 	console.log('parent properties', props);
+// 	return (
+// 		<h1 className="name">
+// 			<a href={props.href} target="props.target">
+// 				{props.title}
+// 			</a>
+// 		</h1>
+// 	);
+// }
 
-const Navigation = () => {
-	return (
-		<ul className="main-nav">
-	        <NavLink 
-	        	title={"History"}
-	        	href={"http://www.history.com"}
-	        	target={"_blank"}
-	        />
-	        <NavLink 
-	        	title={"Account"}
-	        	href={"http://www.google.com"}
-	        	target={"_blank"}
-	        />
-	  	</ul>
-	);
-}
+// const Navigation = () => {
+// 	return (
+// 		<ul className="main-nav">
+// 	        <NavLink 
+// 	        	title={"History"}
+// 	        	href={"http://www.history.com"}
+// 	        	target={"_blank"}
+// 	        />
+// 	        <NavLink 
+// 	        	title={"Account"}
+// 	        	href={"http://www.google.com"}
+// 	        	target={"_blank"}
+// 	        />
+// 	  	</ul>
+// 	);
+// }
 
-const NavLink = (navprops) => {
-	return (
-		<li>
-			<a href={navprops.href} target={navprops.target}>
-				{navprops.title}
-			</a>
-		</li>
-	);
-}
+// const NavLink = (navprops) => {
+// 	return (
+// 		<li>
+// 			<a href={navprops.href} target={navprops.target}>
+// 				{navprops.title}
+// 			</a>
+// 		</li>
+// 	);
+// }
 // notice that the reusability with only the const name being different
 // const Nav = (navprops) => {
 // 	return (
@@ -133,45 +110,45 @@ const Tagline = (bannerprops) => {
 	);
 }
 
-const ChargerList = () => {
-	return (
-		<div className="row">
-			<Charger 
-				station={"CHARGER 1"}
-				chargerStatus={"STALL 1"}
-				buttonName={"SELECT"}
-			/>
-			<Charger 
-				station={"CHARGER 2"}
-				chargerStatus={"OPEN"}
-				buttonName={"SELECT"}
-			/>
-			<Charger 
-				station={"CHARGER 3"}
-				chargerStatus={"RIGHT 2"}
-				buttonName={"SELECT"}
-			/>
-		</div>
-	);
-}
+// const ChargerList = () => {
+// 	return (
+// 		<div className="row">
+// 			<Charger 
+// 				station={"CHARGER 1"}
+// 				chargerStatus={"STALL 1"}
+// 				buttonName={"SELECT"}
+// 			/>
+// 			<Charger 
+// 				station={"CHARGER 2"}
+// 				chargerStatus={"OPEN"}
+// 				buttonName={"SELECT"}
+// 			/>
+// 			<Charger 
+// 				station={"CHARGER 3"}
+// 				chargerStatus={"RIGHT 2"}
+// 				buttonName={"SELECT"}
+// 			/>
+// 		</div>
+// 	);
+// }
 
-const Charger = (chargerprops) => {
-	return (
-		<div className="col">
-			<h2>
-				{chargerprops.station}
-			</h2>
-	  		<p>
-	  			{chargerprops.chargerStatus}
-	  		</p>
-	  		<button className="btn-blue">
-	  			<a href="#">
-	  				{chargerprops.buttonName}
-	  			</a>
-	  		</button>
-		</div>
-	);
-}
+// const Charger = (chargerprops) => {
+// 	return (
+// 		<div className="col">
+// 			<h2>
+// 				{chargerprops.station}
+// 			</h2>
+// 	  		<p>
+// 	  			{chargerprops.chargerStatus}
+// 	  		</p>
+// 	  		<button className="btn-blue">
+// 	  			<a href="#">
+// 	  				{chargerprops.buttonName}
+// 	  			</a>
+// 	  		</button>
+// 		</div>
+// 	);
+// }
 // const Charger = () => {
 // 	return (
 // 		<div className="col">
@@ -208,95 +185,95 @@ const Charger = (chargerprops) => {
 // }
 
 
-const StallList = () => {
-	return (
-		<div className="row">
-			<Stall 
-				stallName={"LEFT 2"}
-				chargerName={"CHARGER:NONE"}
-				stallStatus={"STALL:OPEN"}
-				startTime={"START:N/A"}
-				evangelName={"EVANGEL:KENT"}
-				buttonName={"SELECT"}
-			/>
-			<Stall 
-				stallName={"LEFT 1"}
-				chargerName={"CHARGER:NONE"}
-				stallStatus={"STALL:OPEN"}
-				startTime={"START:N/A"}
-				evangelName={"EVANGEL:KENT"}
-				buttonName={"SELECT"}			
-			/>
-			<Stall 
-				stallName={"STALL 1"}
-				chargerName={"CHARGER:1"}
-				stallStatus={"CHARGING"}
-				startTime={"START: 3:30PM"}
-				evangelName={"EVANGEL:KENT"}
-				buttonName={"SELECT"}			
-			/>
-			<Stall 
-				stallName={"STALL 2"}
-				chargerName={"CHARGER:2"}
-				stallStatus={"FINISHED"}
-				startTime={"START: 2:30PM"}
-				evangelName={"EVANGEL:KENT"}
-				buttonName={"SELECT"}			
-			/>
-			<Stall 
-				stallName={"STALL 3"}
-				chargerName={"CHARGER:NONE"}
-				stallStatus={"WAITING"}
-				startTime={"START: 5:20PM"}
-				evangelName={"EVANGEL:KENT"}
-				buttonName={"SELECT"}			
-			/>
-			<Stall 
-				stallName={"RIGHT 1"}
-				chargerName={"CHARGER:NONE"}
-				stallStatus={"WAITING"}
-				startTime={"START: 4:45PM"}
-				evangelName={"EVANGEL:KENT"}
-				buttonName={"SELECT"}			
-			/>
-			<Stall 
-				stallName={"RIGHT 2"}
-				chargerName={"CHARGER:3"}
-				stallStatus={"CHARGING"}
-				startTime={"START: 4:25PM"}
-				evangelName={"EVANGEL:KENT"}
-				buttonName={"SELECT"}			
-			/>
-		</div>
-	);
-}
+// const StallList = () => {
+// 	return (
+// 		<div className="row">
+// 			<Stall 
+// 				stallName={"LEFT 2"}
+// 				chargerName={"CHARGER:NONE"}
+// 				stallStatus={"STALL:OPEN"}
+// 				startTime={"START:N/A"}
+// 				evangelName={"EVANGEL:KENT"}
+// 				buttonName={"SELECT"}
+// 			/>
+// 			<Stall 
+// 				stallName={"LEFT 1"}
+// 				chargerName={"CHARGER:NONE"}
+// 				stallStatus={"STALL:OPEN"}
+// 				startTime={"START:N/A"}
+// 				evangelName={"EVANGEL:KENT"}
+// 				buttonName={"SELECT"}			
+// 			/>
+// 			<Stall 
+// 				stallName={"STALL 1"}
+// 				chargerName={"CHARGER:1"}
+// 				stallStatus={"CHARGING"}
+// 				startTime={"START: 3:30PM"}
+// 				evangelName={"EVANGEL:KENT"}
+// 				buttonName={"SELECT"}			
+// 			/>
+// 			<Stall 
+// 				stallName={"STALL 2"}
+// 				chargerName={"CHARGER:2"}
+// 				stallStatus={"FINISHED"}
+// 				startTime={"START: 2:30PM"}
+// 				evangelName={"EVANGEL:KENT"}
+// 				buttonName={"SELECT"}			
+// 			/>
+// 			<Stall 
+// 				stallName={"STALL 3"}
+// 				chargerName={"CHARGER:NONE"}
+// 				stallStatus={"WAITING"}
+// 				startTime={"START: 5:20PM"}
+// 				evangelName={"EVANGEL:KENT"}
+// 				buttonName={"SELECT"}			
+// 			/>
+// 			<Stall 
+// 				stallName={"RIGHT 1"}
+// 				chargerName={"CHARGER:NONE"}
+// 				stallStatus={"WAITING"}
+// 				startTime={"START: 4:45PM"}
+// 				evangelName={"EVANGEL:KENT"}
+// 				buttonName={"SELECT"}			
+// 			/>
+// 			<Stall 
+// 				stallName={"RIGHT 2"}
+// 				chargerName={"CHARGER:3"}
+// 				stallStatus={"CHARGING"}
+// 				startTime={"START: 4:25PM"}
+// 				evangelName={"EVANGEL:KENT"}
+// 				buttonName={"SELECT"}			
+// 			/>
+// 		</div>
+// 	);
+// }
 
-const Stall = (stallprops) => {
-	return (
-		<div className="col">
-			<h2>
-				{stallprops.stallName}
-			</h2>
-	  		<p>
-	  			{stallprops.chargerName}
-	  		</p>
-	  		<p>
-	  			{stallprops.stallStatus}
-	  		</p>
- 			<p>
- 				{stallprops.startTime}
- 			</p>
-  			<p>
-  				{stallprops.evangelName}
-  			</p>
-	  		<button className="btn-blue">
-	  			<a href="#">
-	  				{stallprops.buttonName}
-	  			</a>
-	  		</button>
-		</div>
-	);
-}
+// const Stall = (stallprops) => {
+// 	return (
+// 		<div className="col">
+// 			<h2>
+// 				{stallprops.stallName}
+// 			</h2>
+// 	  		<p>
+// 	  			{stallprops.chargerName}
+// 	  		</p>
+// 	  		<p>
+// 	  			{stallprops.stallStatus}
+// 	  		</p>
+//  			<p>
+//  				{stallprops.startTime}
+//  			</p>
+//   			<p>
+//   				{stallprops.evangelName}
+//   			</p>
+// 	  		<button className="btn-blue">
+// 	  			<a href="#">
+// 	  				{stallprops.buttonName}
+// 	  			</a>
+// 	  		</button>
+// 		</div>
+// 	);
+// }
 // const Stall02 = () => {
 // 	return (
 // 		<div className="col">
