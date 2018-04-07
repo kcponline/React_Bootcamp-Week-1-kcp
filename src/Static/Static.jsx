@@ -17,32 +17,33 @@ const Static = () => {
 const Header = () => {
 	return (
 		<header className="main-header">
-			<ul className="name">
-				OPEN CHARGER: 2
-			</ul>
-			<ul className="name">
-				OPEN STALL: L2 L1
-			</ul>
-			<ul className="name">
-				OPEN CHARGER COUNT: 1
-			</ul>
-			<ul className="name">
-				OPEN CHARGER COUNT: 2
-			</ul>
+			<NowOpenCharger 
+				chargername={"OPEN CHARGER: 2"}
+			/>
+			<NowOpenStall 
+				stallname={"OPEN STALL: L2 L1"}
+			/>
 		</header>
 	);
 }
 
-// const HeaderLogo = (props) => {
-// 	console.log('parent properties', props);
-// 	return (
-// 		<h1 className="name">
-// 			<a href={props.href} target="props.target">
-// 				{props.title}
-// 			</a>
-// 		</h1>
-// 	);
-// }
+const NowOpenCharger = (props) => {
+	console.log('parent properties', props);
+	return (
+		<ul className="name">
+			{props.chargername}
+		</ul>
+	);
+}
+
+const NowOpenStall = (props) => {
+	console.log('parent properties', props);
+	return (
+		<ul className="name">
+			{props.stallname}
+		</ul>
+	);
+}
 
 // const Navigation = () => {
 // 	return (
