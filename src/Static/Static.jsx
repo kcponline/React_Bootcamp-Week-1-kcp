@@ -2,26 +2,37 @@
 // remove { Component } because this is static
 // then inject the html code inside the div container
 // the final part is to export the const Static
-import React from 'react';
+import React, { Component } from 'react';
 
-const Static = () => {
-	return (
-		<div>
-			<Header />
-			<Banner />
-			<Footer />
-		</div>
-	);
+class Static extends Component {
+	state = {
+		chargername: "OPEN CHARGER: 2",
+		stallname: "OPEN STALL: L2 L1"
+	}
+
+	render() {
+		const { chargername, stallname } = this.state;
+		return (
+			<div>
+				<Header 
+					chargername={chargername}
+					stallname={stallname}
+				/>
+				<Banner />
+				<Footer />
+			</div>
+		);
+	}
 }
 // static component
-const Header = () => {
+const Header = (props) => {
 	return (
 		<header className="main-header">
 			<NowOpenCharger 
-				chargername={"OPEN CHARGER: 2"}
+				chargername={props.chargername}
 			/>
 			<NowOpenStall 
-				stallname={"OPEN STALL: L2 L1"}
+				stallname={props.stallname}
 			/>
 		</header>
 	);
