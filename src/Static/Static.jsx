@@ -7,18 +7,42 @@ import React, { Component } from 'react';
 class Static extends Component {
 	state = {
 		chargername: "OPEN CHARGER: 2",
-		stallname: "OPEN STALL: L2 L1"
-	}
+		stallname: "OPEN STALL: L2 L1",
+		openchargercount: 1,
+		openstallcount: 2,
+		chargers: [
+			{
+			station: "CHARGER 1",
+			chargerStatus: "STALL 1",
+			buttonName: "SELECT"
+			},
+			{
+			station: "CHARGER 2",
+			chargerStatus: "OPEN",
+			buttonName: "SELECT"
+			},
+			{
+			station: "CHARGER 3",
+			chargerStatus: "RIGHT 2",
+			buttonName: "SELECT"
+			},
+		]
+	};
 
 	render() {
-		const { chargername, stallname } = this.state;
+		const { chargername, stallname, openchargercount, openstallcount, chargers } = this.state;
 		return (
 			<div>
 				<Header 
 					chargername={chargername}
 					stallname={stallname}
+					openchargercount={openchargercount}
+					openstallcount={openstallcount}
 				/>
 				<Banner />
+				<ChargerList 
+					chargers={chargers}
+				/>
 				<Footer />
 			</div>
 		);
@@ -34,6 +58,13 @@ const Header = (props) => {
 			<NowOpenStall 
 				stallname={props.stallname}
 			/>
+			<Openchargercount 
+				openchargercount={props.openchargercount}
+			/>
+			<Openstallcount 
+				openstallcount={props.openstallcount}
+			/>
+
 		</header>
 	);
 }
@@ -52,6 +83,24 @@ const NowOpenStall = (props) => {
 	return (
 		<ul className="name">
 			{props.stallname}
+		</ul>
+	);
+}
+
+const Openchargercount = (props) => {
+	console.log('parent properties', props);
+	return (
+		<ul className="name">
+			OPEN CHARGER COUNT: {props.openchargercount}
+		</ul>
+	);
+}
+
+const Openstallcount = (props) => {
+	console.log('parent properties', props);
+	return (
+		<ul className="name">
+			OPEN STALL COUNT: {props.openstallcount}
 		</ul>
 	);
 }
@@ -122,45 +171,37 @@ const Tagline = (bannerprops) => {
 	);
 }
 
-// const ChargerList = () => {
-// 	return (
-// 		<div className="row">
-// 			<Charger 
-// 				station={"CHARGER 1"}
-// 				chargerStatus={"STALL 1"}
-// 				buttonName={"SELECT"}
-// 			/>
-// 			<Charger 
-// 				station={"CHARGER 2"}
-// 				chargerStatus={"OPEN"}
-// 				buttonName={"SELECT"}
-// 			/>
-// 			<Charger 
-// 				station={"CHARGER 3"}
-// 				chargerStatus={"RIGHT 2"}
-// 				buttonName={"SELECT"}
-// 			/>
-// 		</div>
-// 	);
-// }
+const ChargerList = (props) => {
+
+	return (
+		<div className="row">
+			<div className="col">
+				<h2>
+					{props.station}
+				</h2>
+			</div>
+		</div>
+	);
+}
 
 // const Charger = (chargerprops) => {
 // 	return (
 // 		<div className="col">
 // 			<h2>
-// 				{chargerprops.station}
+// 				{chargerprops.chargers.station}
 // 			</h2>
 // 	  		<p>
-// 	  			{chargerprops.chargerStatus}
+// 	  			{chargerprops.chargers.chargerStatus}
 // 	  		</p>
 // 	  		<button className="btn-blue">
-// 	  			<a href="#">
-// 	  				{chargerprops.buttonName}
+// 	  			<a href="http://www.yahoo.com">
+// 	  				{chargerprops.chargers.buttonName}
 // 	  			</a>
 // 	  		</button>
 // 		</div>
 // 	);
 // }
+
 // const Charger = () => {
 // 	return (
 // 		<div className="col">
@@ -286,6 +327,7 @@ const Tagline = (bannerprops) => {
 // 		</div>
 // 	);
 // }
+
 // const Stall02 = () => {
 // 	return (
 // 		<div className="col">
