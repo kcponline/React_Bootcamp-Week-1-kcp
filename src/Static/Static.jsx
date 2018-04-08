@@ -10,7 +10,18 @@ class Static extends Component {
 		stallname: "OPEN STALL: L2 L1",
 		openchargercount: 1,
 		openstallcount: 2,
-		chargers: 'charger details'
+		// reduced version of array for ez proving
+		chargers: [
+			{
+			station: "1"
+			},
+			{
+			station: "2"
+			},
+			{
+			station: "3"
+			},
+		]
 		// chargers: [
 		// 	{
 		// 	station: "CHARGER 1",
@@ -177,32 +188,27 @@ const ChargerList = (props) => {
 	console.log('chargers: ', props);
 	return (
 		<div className="row">
-			<div className="col">
-				<h2>
-					{props.chargers}
-				</h2>
-			</div>
+			{
+			props.chargers.map((charger, index) => (
+				<ChargerCard
+					key={index}
+					station={charger.station}
+				/>
+			))
+			}
 		</div>
 	);
 }
 
-// const Charger = (chargerprops) => {
-// 	return (
-// 		<div className="col">
-// 			<h2>
-// 				{chargerprops.chargers.station}
-// 			</h2>
-// 	  		<p>
-// 	  			{chargerprops.chargers.chargerStatus}
-// 	  		</p>
-// 	  		<button className="btn-blue">
-// 	  			<a href="http://www.yahoo.com">
-// 	  				{chargerprops.chargers.buttonName}
-// 	  			</a>
-// 	  		</button>
-// 		</div>
-// 	);
-// }
+const ChargerCard = (props) => {
+	return (
+		<div className="col">
+			<h2>
+				CHARGER NO. {props.station}
+			</h2>
+		</div>
+	);
+}
 
 // const Charger = () => {
 // 	return (
