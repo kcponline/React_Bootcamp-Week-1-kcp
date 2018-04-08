@@ -15,63 +15,51 @@ const Static = () => { // if this is stateful, then this would be " class Static
 		</div>
 	);
 }
-// here inside header, headerlogo is stateless functional component with static props.
+// here inside header, both HeaderLogo & Navigation are just components
 const Header = () => {
-	return ( // again, noice upper case is required for each component's 1st letter.
+	return (
 		<header className="main-header">
-			<HeaderLogo 
-				title={"EV Angel"} // this is static because "EV Angel" hardcoded & only change manually by coder.
-				href={"http://www.yahoo.com"}
-				target={"_blank"}
-			/>
+			<HeaderLogo />
 			<Navigation />
 		</header>
 	);
 }
-// insert "props" to pass the static info from parent to this child component as an argument.
-const HeaderLogo = (props) => {
-	console.log('HeaderLogo properties', props);
+
+const HeaderLogo = () => {
+	
 	return (
 		<h1 className="name">
-			<a href={props.href} target="props.target">
-				{props.title}
+			<a href="http://www.yahoo.com" target="_blank">
+				EV Angel
 			</a>
 		</h1>
 	);
 }
-// in contrast to HeaderLogo, this has grandchild component. so the static info is defined in the child instead of in "Header".
+// in contrast to HeaderLogo, this has grandchild component.
 const Navigation = () => {
 	return (
 		<ul className="main-nav">
-	        <Nav01 
-	        	title={"History"}
-	        	href={"http://www.history.com"}
-	        	target={"_blank"}
-	        />
-	        <Nav02 
-	        	title={"Account"}
-	        	href={"http://www.google.com"}
-	        	target={"_blank"}
-	        />
+	        <Nav01 />
+	        <Nav02 />
 	  	</ul>
 	);
 }
 
-const Nav01 = (navprops) => {
+const Nav01 = () => {
 	return (
 		<li>
-			<a href={navprops.href} target={navprops.target}>
-				{navprops.title}
+			<a href="http://www.yahoo.com" target="_blank">
+				HISTORY
 			</a>
 		</li>
 	);
 }
-// notice that the reusability with only the const name being different
-const Nav02 = (navprops) => {
+// later on, this could be reduced to just Nav component but dynamically differentiated.
+const Nav02 = () => {
 	return (
 		<li>
-			<a href={navprops.href} target={navprops.target}>
-				{navprops.title}
+			<a href="http://www.yahoo.com" target="_blank">
+				ACCOUNT
 			</a>
 		</li>
 	);
