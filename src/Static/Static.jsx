@@ -10,23 +10,24 @@ class Static extends Component {
 		stallname: "OPEN STALL: L2 L1",
 		openchargercount: 1,
 		openstallcount: 2,
-		chargers: [
-			{
-			station: "CHARGER 1",
-			chargerStatus: "STALL 1",
-			buttonName: "SELECT"
-			},
-			{
-			station: "CHARGER 2",
-			chargerStatus: "OPEN",
-			buttonName: "SELECT"
-			},
-			{
-			station: "CHARGER 3",
-			chargerStatus: "RIGHT 2",
-			buttonName: "SELECT"
-			},
-		]
+		chargers: 'charger details'
+		// chargers: [
+		// 	{
+		// 	station: "CHARGER 1",
+		// 	chargerStatus: "STALL 1",
+		// 	buttonName: "SELECT"
+		// 	},
+		// 	{
+		// 	station: "CHARGER 2",
+		// 	chargerStatus: "OPEN",
+		// 	buttonName: "SELECT"
+		// 	},
+		// 	{
+		// 	station: "CHARGER 3",
+		// 	chargerStatus: "RIGHT 2",
+		// 	buttonName: "SELECT"
+		// 	},
+		// ]
 	};
 
 	render() {
@@ -172,12 +173,13 @@ const Tagline = (bannerprops) => {
 }
 
 const ChargerList = (props) => {
-
+	// console.log just to make sure that the props are passing down correctly
+	console.log('chargers: ', props);
 	return (
 		<div className="row">
 			<div className="col">
 				<h2>
-					{props.station}
+					{props.chargers}
 				</h2>
 			</div>
 		</div>
