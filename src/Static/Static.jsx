@@ -1,11 +1,11 @@
 // import React, { Component } from 'react';
-// remove { Component } because this is static
-// then inject the html code inside the div container
-// the final part is to export the const Static
+// remove { Component } because this is static.
+// then inject the html code inside the div container.
+// the final part is to export the const Static.
 import React from 'react';
-
-const Static = () => {
-	return (
+// below is a typical stateless functional component as a base for starting point.
+const Static = () => { // if this is stateful, then this would be " class Static extends Component { ".
+	return ( // this would be "render" if stateful. also, state would added & defined. Notice, upper case is required for 1st letter of each component.
 		<div>
 			<Header />
 			<Banner />
@@ -15,12 +15,12 @@ const Static = () => {
 		</div>
 	);
 }
-
+// here inside header, headerlogo is stateless functional component with static props.
 const Header = () => {
-	return (
+	return ( // again, noice upper case is required for each component's 1st letter.
 		<header className="main-header">
 			<HeaderLogo 
-				title={"EV Angel"}
+				title={"EV Angel"} // this is static because "EV Angel" hardcoded & only change manually by coder.
 				href={"http://www.yahoo.com"}
 				target={"_blank"}
 			/>
@@ -28,9 +28,9 @@ const Header = () => {
 		</header>
 	);
 }
-
+// insert "props" to pass the static info from parent to this child component as an argument.
 const HeaderLogo = (props) => {
-	console.log('parent properties', props);
+	console.log('HeaderLogo properties', props);
 	return (
 		<h1 className="name">
 			<a href={props.href} target="props.target">
@@ -39,7 +39,7 @@ const HeaderLogo = (props) => {
 		</h1>
 	);
 }
-
+// in contrast to HeaderLogo, this has grandchild component. so the static info is defined in the child instead of in "Header".
 const Navigation = () => {
 	return (
 		<ul className="main-nav">
@@ -76,7 +76,7 @@ const Nav02 = (navprops) => {
 		</li>
 	);
 }
-
+// everything below this point is only statically coded as comparison but will be also turned into stateless props in the next branch
 const Banner = () => {
 	return (
 		<div className="banner">
