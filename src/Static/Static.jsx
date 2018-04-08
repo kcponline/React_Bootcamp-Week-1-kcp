@@ -11,34 +11,34 @@ class Static extends Component {
 		openchargercount: 1,
 		openstallcount: 2,
 		// reduced version of array for ez proving
-		chargers: [
-			{
-			station: "1"
-			},
-			{
-			station: "2"
-			},
-			{
-			station: "3"
-			},
-		]
 		// chargers: [
 		// 	{
-		// 	station: "CHARGER 1",
-		// 	chargerStatus: "STALL 1",
-		// 	buttonName: "SELECT"
+		// 	station: "1"
 		// 	},
 		// 	{
-		// 	station: "CHARGER 2",
-		// 	chargerStatus: "OPEN",
-		// 	buttonName: "SELECT"
+		// 	station: "2"
 		// 	},
 		// 	{
-		// 	station: "CHARGER 3",
-		// 	chargerStatus: "RIGHT 2",
-		// 	buttonName: "SELECT"
+		// 	station: "3"
 		// 	},
 		// ]
+		chargers: [
+			{
+			station: "1",
+			chargerStatus: "STALL 1",
+			buttonName: "SELECT"
+			},
+			{
+			station: "2",
+			chargerStatus: "OPEN",
+			buttonName: "SELECT"
+			},
+			{
+			station: "3",
+			chargerStatus: "RIGHT 2",
+			buttonName: "SELECT"
+			},
+		]
 	};
 
 	render() {
@@ -193,6 +193,8 @@ const ChargerList = (props) => {
 				<ChargerCard
 					key={index}
 					station={charger.station}
+					chargerStatus={charger.chargerStatus}
+					buttonName={charger.buttonName}
 				/>
 			))
 			}
@@ -206,6 +208,12 @@ const ChargerCard = (props) => {
 			<h2>
 				CHARGER NO. {props.station}
 			</h2>
+			<h1>
+				STATUS: {props.chargerStatus}
+			</h1>
+			<button className="btn-blue">	
+				{props.buttonName}
+			</button>
 		</div>
 	);
 }
