@@ -33,7 +33,7 @@ const HeaderLogo = (props) => {
 	console.log('parent properties', props);
 	return (
 		<h1 className="name">
-			<a href={props.href} target="props.target">
+			<a href={props.href} target={props.target}>
 				{props.title}
 			</a>
 		</h1>
