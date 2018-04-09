@@ -23,6 +23,16 @@ class Static extends Component {
 		// 	},
 		// ]
 		chargers: [
+			// {
+			// station: "NONE",
+			// chargerStatus: "N/A",
+			// buttonName: "N/A"
+			// },
+			// {
+			// station: "NONE",
+			// chargerStatus: "N/A",
+			// buttonName: "N/A"
+			// },
 			{
 			station: "1",
 			chargerStatus: "STALL 1",
@@ -38,11 +48,79 @@ class Static extends Component {
 			chargerStatus: "RIGHT 2",
 			buttonName: "SELECT"
 			},
+			// {
+			// station: "NONE",
+			// chargerStatus: "N/A",
+			// buttonName: "N/A"
+			// },
+			// {
+			// station: "NONE",
+			// chargerStatus: "N/A",
+			// buttonName: "N/A"
+			// },
+		],
+		stalls: [
+			{
+			stallName: "LEFT 2",
+			chargerName: "CHARGER: NONE",
+			stallStatus: "STALL: OPEN",
+			startTime: "START: N/A",
+			evangelName: "EVANGEL: KENT",
+			buttonName: "SELECT"
+			},
+			{
+			stallName: "LEFT 1",
+			chargerName: "CHARGER: NONE",
+			stallStatus: "STALL: OPEN",
+			startTime: "START: N/A",
+			evangelName: "EVANGEL: KENT",
+			buttonName: "SELECT"			
+			},
+			{
+			stallName: "STALL 1",
+			chargerName: "CHARGER: 1",
+			stallStatus: "CHARGING",
+			startTime: "START: 3:30PM",
+			evangelName: "EVANGEL: KENT",
+			buttonName: "SELECT"			
+			},
+			{
+			stallName: "STALL 2",
+			chargerName: "CHARGER: 2",
+			stallStatus: "FINISHED",
+			startTime: "START: 2:30PM",
+			evangelName: "EVANGEL: KENT",
+			buttonName: "SELECT"			
+			},
+			{
+			stallName: "STALL 3",
+			chargerName: "CHARGER: NONE",
+			stallStatus: "WAITING",
+			startTime: "START: 5:20PM",
+			evangelName: "EVANGEL: KENT",
+			buttonName: "SELECT"			
+			},
+			{
+			stallName: "RIGHT 1",
+			chargerName: "CHARGER: NONE",
+			stallStatus: "WAITING",
+			startTime: "START: 4:45PM",
+			evangelName: "EVANGEL: KENT",
+			buttonName: "SELECT"			
+			},
+			{
+			stallName: "RIGHT 2",
+			chargerName: "CHARGER: 3",
+			stallStatus: "CHARGING",
+			startTime: "START: 4:25PM",
+			evangelName: "EVANGEL: KENT",
+			buttonName: "SELECT"
+			},
 		]
 	};
 
 	render() {
-		const { chargername, stallname, openchargercount, openstallcount, chargers } = this.state;
+		const { chargername, stallname, openchargercount, openstallcount, chargers, stalls } = this.state;
 		return (
 			<div>
 				<Header 
@@ -54,6 +132,9 @@ class Static extends Component {
 				<Banner />
 				<ChargerList 
 					chargers={chargers}
+				/>
+				<StallList
+					stalls={stalls}
 				/>
 				<Footer />
 			</div>
@@ -208,12 +289,33 @@ const ChargerCard = (props) => {
 			<h2>
 				CHARGER NO. {props.station}
 			</h2>
-			<h1>
+			<h3>
 				STATUS: {props.chargerStatus}
-			</h1>
+			</h3>
 			<button className="btn-blue">	
 				{props.buttonName}
 			</button>
+		</div>
+	);
+}
+
+const StallList = (props) => {
+	console.log('stalls: ', props);
+	return (
+		<div className="row">
+			{
+			props.stalls.map((stall, index) => (
+				<StallCard
+					key={index}
+					stallName={stall.stallName}
+					stallStatus={stall.stallStatus}
+					evangelName={stall.evangelName}
+					chargerName={stall.chargerName}
+					startTime={stall.startTime}
+					buttonName={stall.buttonName}
+				/>
+			))
+			}
 		</div>
 	);
 }
@@ -317,32 +419,32 @@ const ChargerCard = (props) => {
 // 	);
 // }
 
-// const Stall = (stallprops) => {
-// 	return (
-// 		<div className="col">
-// 			<h2>
-// 				{stallprops.stallName}
-// 			</h2>
-// 	  		<p>
-// 	  			{stallprops.chargerName}
-// 	  		</p>
-// 	  		<p>
-// 	  			{stallprops.stallStatus}
-// 	  		</p>
-//  			<p>
-//  				{stallprops.startTime}
-//  			</p>
-//   			<p>
-//   				{stallprops.evangelName}
-//   			</p>
-// 	  		<button className="btn-blue">
-// 	  			<a href="#">
-// 	  				{stallprops.buttonName}
-// 	  			</a>
-// 	  		</button>
-// 		</div>
-// 	);
-// }
+const StallCard = (stall) => {
+	return (
+		<div className="col">
+			<h2>
+				{stall.stallName}
+			</h2>
+	  		<p>
+	  			{stall.stallStatus}
+	  		</p>
+ 			<p>
+ 				{stall.startTime}
+ 			</p>
+	  		<h2>
+	  			{stall.chargerName}
+	  		</h2>
+  			<p>
+  				{stall.evangelName}
+  			</p>
+	  		<button className="btn-blue">
+	  			<a href="#">
+	  				{stall.buttonName}
+	  			</a>
+	  		</button>
+		</div>
+	);
+}
 
 // const Stall02 = () => {
 // 	return (
