@@ -39,7 +39,19 @@ class Static extends Component {
 			charging: true
 			},
 		]
-	};
+	}
+
+	updateChargerName = (chargername) => {
+	console.log('open charger name:', chargername);
+	}
+
+	updateOpenChargerCount = () => {
+	console.log('+1 Open Charger Count');
+	}
+
+	updateChargerState = (chargerClicked) => {
+	console.log('Now Charging:', chargerClicked);
+	}
 
 	render() {
 		const { chargername, stallname, openchargercount, openstallcount, chargers } = this.state;
@@ -54,6 +66,9 @@ class Static extends Component {
 				<Banner />
 				<ChargerList 
 					chargers={chargers}
+					updateChargerName={this.updateChargerName}
+		            updateOpenChargerCount={this.updateOpenChargerCount}
+		            updateChargerState={this.updateChargerState}
 				/>
 				<Footer />
 			</div>
@@ -195,6 +210,9 @@ const ChargerList = (props) => {
 					station={charger.station}
 					chargerStatus={charger.chargerStatus}
 					charging={charger.charging}
+					updateChargerName={props.updateChargerName}
+		            updateOpenChargerCount={props.updateOpenChargerCount}
+		            updateChargerState={props.updateChargerState}
 				/>
 			))
 			}
@@ -211,13 +229,32 @@ const ChargerCard = (props) => {
 			</h2>
 			<h1>
 				STATUS: {props.chargerStatus}
-			</h1>
-			<button className="btn-blue">	
-				{props.charging ? 'CHARGING' : 'OPEN'}
-			</button>
+			</h1>		
+			<ChargerState
+				charging={props.charging}
+				updateChargerName={props.updateChargerName}
+	            updateOpenChargerCount={props.updateOpenChargerCount}
+	            updateChargerState={props.updateChargerState}
+			/>
 		</div>
 	);
 }
+
+const ChargerState = (props) => {
+	return (
+		<button className="btn-blue"> 
+			{props.charging ? 'CHARGING' : 'OPEN'}
+			onClick={() => {
+				props.updateChargerName(props.chargername)
+	            props.updateOpenChargerCount()
+	            props.updateChargerState(props.chargername)
+			}}
+		</button>
+	);
+}
+
+
+
 
 // const Charger = () => {
 // 	return (
