@@ -6,10 +6,10 @@ import React, { Component } from 'react';
 
 class Static extends Component {
 	state = {
-		chargername: "OPEN CHARGER: 2",
-		stallname: "OPEN STALL: L2 L1",
+		chargername: null,
+		stallname: null,
 		openchargercount: 1,
-		openstallcount: 2,
+		openstallcount: 0,
 		// reduced version of array for ez proving
 		// chargers: [
 		// 	{
@@ -26,17 +26,17 @@ class Static extends Component {
 			{
 			station: "1",
 			chargerStatus: "STALL 1",
-			buttonName: "SELECT"
+			charging: true
 			},
 			{
 			station: "2",
 			chargerStatus: "OPEN",
-			buttonName: "SELECT"
+			charging: false
 			},
 			{
 			station: "3",
 			chargerStatus: "RIGHT 2",
-			buttonName: "SELECT"
+			charging: true
 			},
 		]
 	};
@@ -85,7 +85,7 @@ const NowOpenCharger = (props) => {
 	console.log('parent properties', props);
 	return (
 		<ul className="name">
-			{props.chargername}
+			{props.chargername ? 'CHARGER OPEN: ${props.chargername}' : 'NO OPEN CHARGER'}
 		</ul>
 	);
 }
@@ -94,7 +94,7 @@ const NowOpenStall = (props) => {
 	console.log('parent properties', props);
 	return (
 		<ul className="name">
-			{props.stallname}
+			{props.stallname ? 'STALL OPEN: ${props.stallname}' : 'NO OPEN STALL'}
 		</ul>
 	);
 }
@@ -103,7 +103,7 @@ const Openchargercount = (props) => {
 	console.log('parent properties', props);
 	return (
 		<ul className="name">
-			OPEN CHARGER COUNT: {props.openchargercount}
+			{props.openchargercount > 0 && '${props.openchargercount} OPEN CHARGER'}
 		</ul>
 	);
 }
@@ -112,7 +112,7 @@ const Openstallcount = (props) => {
 	console.log('parent properties', props);
 	return (
 		<ul className="name">
-			OPEN STALL COUNT: {props.openstallcount}
+			{props.openstallcount > 0 && '${props.openstallcount} OPEN STALL'}
 		</ul>
 	);
 }
@@ -194,7 +194,7 @@ const ChargerList = (props) => {
 					key={index}
 					station={charger.station}
 					chargerStatus={charger.chargerStatus}
-					buttonName={charger.buttonName}
+					charging={charger.charging}
 				/>
 			))
 			}
@@ -203,6 +203,7 @@ const ChargerList = (props) => {
 }
 
 const ChargerCard = (props) => {
+	console.log('charging: ', props.charging);
 	return (
 		<div className="col">
 			<h2>
@@ -212,7 +213,7 @@ const ChargerCard = (props) => {
 				STATUS: {props.chargerStatus}
 			</h1>
 			<button className="btn-blue">	
-				{props.buttonName}
+				{props.charging ? 'CHARGING' : 'OPEN'}
 			</button>
 		</div>
 	);
