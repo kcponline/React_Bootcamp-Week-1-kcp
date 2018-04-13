@@ -6,10 +6,10 @@ import React, { Component } from 'react';
 
 class Static extends Component {
 	state = {
-		chargername: null,
-		stallname: null,
+		chargername: "2",
+		stallname: "L1 L2",
 		openchargercount: 1,
-		openstallcount: 0,
+		openstallcount: 2,
 		// reduced version of array for ez proving
 		// chargers: [
 		// 	{
@@ -100,7 +100,7 @@ const NowOpenCharger = (props) => {
 	console.log('parent properties', props);
 	return (
 		<ul className="name">
-			{props.chargername ? 'CHARGER OPEN: ${props.chargername}' : 'NO OPEN CHARGER'}
+			{props.chargername ? `CHARGER OPEN: ${props.chargername}` : 'NO OPEN CHARGER'}
 		</ul>
 	);
 }
@@ -109,7 +109,7 @@ const NowOpenStall = (props) => {
 	console.log('parent properties', props);
 	return (
 		<ul className="name">
-			{props.stallname ? 'STALL OPEN: ${props.stallname}' : 'NO OPEN STALL'}
+			{props.stallname ? `STALL OPEN: ${props.stallname}` : 'NO OPEN STALL'}
 		</ul>
 	);
 }
@@ -118,7 +118,7 @@ const Openchargercount = (props) => {
 	console.log('parent properties', props);
 	return (
 		<ul className="name">
-			{props.openchargercount > 0 && '${props.openchargercount} OPEN CHARGER'}
+			{props.openchargercount > 0 && `${props.openchargercount} OPEN CHARGER`}
 		</ul>
 	);
 }
@@ -127,7 +127,7 @@ const Openstallcount = (props) => {
 	console.log('parent properties', props);
 	return (
 		<ul className="name">
-			{props.openstallcount > 0 && '${props.openstallcount} OPEN STALL'}
+			{props.openstallcount > 0 && `${props.openstallcount} OPEN STALL`}
 		</ul>
 	);
 }
