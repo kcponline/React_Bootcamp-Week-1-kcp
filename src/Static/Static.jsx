@@ -233,7 +233,7 @@ const ChargerCard = (props) => {
 			<div>
 				<ChargingState
 					station={props.station}
-					chargin={props.charging}
+					charging={props.charging}
 					updateChargerName={props.updateChargerName}
 				/>
 			</div>
