@@ -249,8 +249,8 @@ const ChargingState = (props) => {
 				className={props.charging ? 'btn-green' : 'btn-blue'}
 				onClick={() => {
 					props.updateChargerName(props.station)
-					props.updateOpenChargerCount(props.updateOpenChargerCount)
-					props.updateChargerState(props.updateChargerState)
+					props.updateOpenChargerCount()
+					props.updateChargerState(props.charging)
 				}}
 			>
 				{props.charging ? 'CHARGING' : 'OPEN'}
