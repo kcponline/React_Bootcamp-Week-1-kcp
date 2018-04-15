@@ -8,8 +8,8 @@ class Static extends Component {
 	state = {
 		chargername: "2",
 		stallname: "L1 L2",
-		openchargercount: 1,
-		openstallcount: 2,
+		openchargercount: 3,
+		openstallcount: 7,
 		// reduced version of array for ez proving
 		// chargers: [
 		// 	{
@@ -48,7 +48,7 @@ class Static extends Component {
 
 	updateOpenChargerCount = () => {
 	// console.log('+1 Open Charger Count');
-		this.setState({ openchargercount:this.state.openchargercount + 1 });
+		this.setState((priorstate) => ({ openchargercount:priorstate.openchargercount - 1 }));
 	}
 
 	updateChargerState = (chargerClicked) => {
