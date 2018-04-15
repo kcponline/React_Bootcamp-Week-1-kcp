@@ -8,8 +8,8 @@ class Static extends Component {
 	state = {
 		chargername: "2",
 		stallname: "L1 L2",
-		openchargercount: 1,
-		openstallcount: 2,
+		openchargercount: 3,
+		openstallcount: 7,
 		// reduced version of array for ez proving
 		// chargers: [
 		// 	{
@@ -42,11 +42,13 @@ class Static extends Component {
 	}
 
 	updateChargerName = (chargername) => {
-	console.log('open charger name:', chargername);
+	// console.log('open charger name:', chargername);
+		this.setState(() => ({ chargername:chargername }));
 	}
 
 	updateOpenChargerCount = () => {
-	console.log('+1 Open Charger Count');
+	// console.log('+1 Open Charger Count');
+		this.setState((priorstate) => ({ openchargercount:priorstate.openchargercount - 1 }));
 	}
 
 	updateChargerState = (chargerClicked) => {
@@ -230,22 +232,25 @@ const ChargerCard = (props) => {
 			<h1>
 				STATUS: {props.chargerStatus}
 			</h1>		
-			<div>
-				<ChargingState
-					station={props.station}
-					charging={props.charging}
-					updateChargerName={props.updateChargerName}
-				/>
-			</div>
+			<ChargingState
+				station={props.station}
+				charging={props.charging}
+				updateChargerName={props.updateChargerName}
+				updateOpenChargerCount={props.updateOpenChargerCount}
+	            updateChargerState={props.updateChargerState}
+			/>
 		</div>
 	);
 }
 
 const ChargingState = (props) => {
 	return (
-		<button className='btn-blue'
+		<button 
+			className={props.charging ? 'btn-green' : 'btn-blue'}
 			onClick={() => {
 				props.updateChargerName(props.station)
+				props.updateOpenChargerCount()
+	            props.updateChargerState(props.charging)
 			}}
 		>
 			{props.charging ? 'CHARGING' : 'OPEN'}
