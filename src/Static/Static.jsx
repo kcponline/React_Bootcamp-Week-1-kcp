@@ -250,7 +250,7 @@ const ChargingState = (props) => {
 				onClick={() => {
 					props.updateChargerName(props.station)
 					props.updateOpenChargerCount()
-					props.updateChargerState(props.charger)
+					props.updateChargerState(props.charging)
 				}}
 			>
 				{props.charging ? 'CHARGING' : 'OPEN'}
