@@ -243,8 +243,8 @@ const ChargerCard = (props) => {
 
 const ChargingState = (props) => {
 	return (
-			<button className='btn-blue'
-				background-color={props.charger ? '#00ff00' : '#61dafb'}
+			<button 
+				className={props.charging ? 'btn-green' : 'btn-blue'}
 				onClick={() => {
 					props.updateChargerName(props.station)
 					props.updateOpenChargerCount(props.updateOpenChargerCount)
