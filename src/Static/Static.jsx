@@ -47,7 +47,8 @@ class Static extends Component {
 	}
 
 	updateOpenChargerCount = () => {
-	console.log('+1 Open Charger Count');
+	// console.log('+1 Open Charger Count');
+		this.setState({ openchargercount:this.state.openchargercount + 1 });
 	}
 
 	updateChargerState = (chargerClicked) => {
