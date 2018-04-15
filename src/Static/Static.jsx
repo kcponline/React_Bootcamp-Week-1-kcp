@@ -230,24 +230,29 @@ const ChargerCard = (props) => {
 			<h1>
 				STATUS: {props.chargerStatus}
 			</h1>		
-			<button className='btn-blue'>
-				{props.charging ? 'CHARGING' : 'OPEN'}
-				<ChargingState
-					station={props.station}
-					updateChargerName={props.updateChargerName}
-				/>
-			</button>
+			<ChargingState
+				station={props.station}
+				charging={props.charging}
+				updateChargerName={props.updateChargerName}
+				updateOpenChargerCount={props.updateOpenChargerCount}
+				updateChargerState={props.updateChargerState}
+			/>
 		</div>
 	);
 }
 
 const ChargingState = (props) => {
 	return (
-		<div 
-			onClick={() => {
-				props.updateChargerName(props.station)
-			}}
-		/>
+			<button className='btn-blue'
+				background-color={props.charger ? '#00ff00' : '#61dafb'}
+				onClick={() => {
+					props.updateChargerName(props.station)
+					props.updateOpenChargerCount(props.updateOpenChargerCount)
+					props.updateChargerState(props.updateChargerState)
+				}}
+			>
+				{props.charging ? 'CHARGING' : 'OPEN'}
+			</button>
 	);
 }
 

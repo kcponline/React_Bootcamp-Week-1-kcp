@@ -109,7 +109,15 @@ div {
 
 .btn-blue {
 	width: 100%;
-	background-color: #61dafb;
+	background-color: #61dafb; /*61dafb*/
+	border: none;
+	padding: 10px 25px;
+	font-size: 15px;
+}
+
+.btn-green {
+	width: 100%;
+	background-color: #00ff00; /*61dafb*/
 	border: none;
 	padding: 10px 25px;
 	font-size: 15px;
