@@ -42,7 +42,8 @@ class Static extends Component {
 	}
 
 	updateChargerName = (chargername) => {
-	console.log('open charger name:', chargername);
+	// console.log('open charger name:', chargername);
+		this.setState(() => ({ chargername:chargername }));
 	}
 
 	updateOpenChargerCount = () => {
