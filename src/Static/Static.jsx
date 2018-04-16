@@ -66,12 +66,14 @@ class Static extends Component {
 					openstallcount={openstallcount}
 				/>
 				<Banner />
-				<CardList 
-					chargers={chargers}
-					updateChargerName={this.updateChargerName}
-		            updateOpenChargerCount={this.updateOpenChargerCount}
-		            updateChargerState={this.updateChargerState}
-				/>
+				<Container>
+					<CardList 
+						chargers={chargers}
+						updateChargerName={this.updateChargerName}
+			            updateOpenChargerCount={this.updateOpenChargerCount}
+			            updateChargerState={this.updateChargerState}
+					/>
+				</Container>
 				<Footer />
 			</div>
 		);
