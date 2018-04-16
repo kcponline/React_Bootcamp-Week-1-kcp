@@ -82,20 +82,28 @@ const InfoHeader = (props) => {
 	return ( // 2) replace div with Menu
     <Menu size='huge' inverted borderless>
       <Menu.Item position='left'>
+      	<Grid.Row>
 			<NowOpenCharger 
 				chargername={props.chargername}
 			/>
+		</Grid.Row>
+		<Grid.Row>
 			<NowOpenStall 
 				stallname={props.stallname}
 			/>
+		</Grid.Row>
       </Menu.Item>
       <Menu.Item position='right'>
+      	<Grid.Row>
 			<Openchargercount 
 				openchargercount={props.openchargercount}
 			/>
+		</Grid.Row>
+		<Grid.Row>
 			<Openstallcount 
 				openstallcount={props.openstallcount}
 			/>
+		</Grid.Row>
       </Menu.Item>
     </Menu>
 	);
@@ -104,7 +112,7 @@ const InfoHeader = (props) => {
 const NowOpenCharger = (props) => {
 	console.log('parent properties', props);
 	return (
-		<Header as='h3' inverted>
+		<Header as='h3' inverted style={{ padding: '0.5em 0.5em' }}>
 			{props.chargername ? `CHARGER OPEN: ${props.chargername}` : 'NO OPEN CHARGER'}
 		</Header>
 	);
@@ -113,7 +121,7 @@ const NowOpenCharger = (props) => {
 const NowOpenStall = (props) => {
 	console.log('parent properties', props);
 	return (
-		<Header as='h3' inverted>
+		<Header as='h3' inverted style={{ padding: '0.5em 0.5em' }}>
 			{props.stallname ? `STALL OPEN: ${props.stallname}` : 'NO OPEN STALL'}
 		</Header>
 	);
@@ -122,7 +130,7 @@ const NowOpenStall = (props) => {
 const Openchargercount = (props) => {
 	console.log('parent properties', props);
 	return (
-		<Header as='h3' inverted>
+		<Header as='h3' inverted style={{ padding: '0.5em 0.5em' }}>
 			{props.openchargercount > 0 && `${props.openchargercount} OPEN CHARGER`}
 		</Header>
 	);
@@ -131,7 +139,7 @@ const Openchargercount = (props) => {
 const Openstallcount = (props) => {
 	console.log('parent properties', props);
 	return (
-		<Header as='h3' inverted>
+		<Header as='h3' inverted style={{ padding: '0.5em 0.5em' }}>
 			{props.openstallcount > 0 && `${props.openstallcount} OPEN STALL`}
 		</Header>
 	);
