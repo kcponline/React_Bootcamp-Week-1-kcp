@@ -178,16 +178,12 @@ const Banner = () => {
 	return (
 		<Grid container style={{ padding: '5em 0em' }}>
 			<Grid.Row>
-			  <Grid.Column>
-			    <Header as='h1' dividing>
-					<Headline 
-						title={"EV Angel"}
-					/>
-					<Tagline 
-						title={"Helping you to get your EV Charging"}
-					/>
-			    </Header>
-			  </Grid.Column>
+				<Headline 
+					title={"EV Angel"}
+				/>
+				<Tagline 
+					title={"Helping you to get your EV Charging"}
+				/>
 			</Grid.Row>
 		</Grid>
 	);
@@ -195,17 +191,25 @@ const Banner = () => {
 
 const Headline = (bannerprops) => {
 	return (
-		<h1 className="headline">
-			{bannerprops.title}
-		</h1>
+		// <h1 className="headline">
+		<Grid.Column>
+			<Header as='h1' dividing>
+				{bannerprops.title}
+			</Header>
+		</Grid.Column>
+		// </h1>
 	);
 }
 
 const Tagline = (bannerprops) => {
 	return (
-	  	<span className="tagline">
-	  		{bannerprops.title}
-	  	</span>
+	  	// <span className="tagline">
+		<Grid.Column>
+			<Header as='h1' dividing>
+	  			{bannerprops.title}
+			</Header>
+		</Grid.Column>
+	  	// </span>
 	);
 }
 
