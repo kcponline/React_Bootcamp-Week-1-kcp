@@ -104,18 +104,18 @@ const InfoHeader = (props) => {
 const NowOpenCharger = (props) => {
 	console.log('parent properties', props);
 	return (
-		<ul className="name">
+		<Header as='h3' inverted>
 			{props.chargername ? `CHARGER OPEN: ${props.chargername}` : 'NO OPEN CHARGER'}
-		</ul>
+		</Header>
 	);
 }
 
 const NowOpenStall = (props) => {
 	console.log('parent properties', props);
 	return (
-		<ul className="name">
+		<Header as='h3' inverted>
 			{props.stallname ? `STALL OPEN: ${props.stallname}` : 'NO OPEN STALL'}
-		</ul>
+		</Header>
 	);
 }
 
