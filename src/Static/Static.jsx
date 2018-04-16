@@ -260,16 +260,16 @@ const ChargerCard = (props) => {
 
 const ChargingState = (props) => {
 	return (
-		<button 
-			className={props.charging ? 'btn-green' : 'btn-blue'}
+		<Button
+			fluid
+			header={props.charging ? 'CHARGING' : 'OPEN'}
+			color={props.charging ? 'green' : 'blue'}
 			onClick={() => {
 				props.updateChargerName(props.station)
 				props.updateOpenChargerCount()
 	            props.updateChargerState(props.charging)
 			}}
-		>
-			{props.charging ? 'CHARGING' : 'OPEN'}
-		</button>
+		/>
 	);
 }
 
