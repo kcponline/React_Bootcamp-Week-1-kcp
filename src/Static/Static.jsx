@@ -1,8 +1,8 @@
-// import React, { Component } from 'react';
-// remove { Component } because this is static
-// then inject the html code inside the div container
-// the final part is to export the const Static
+// remove { Component } when stateless static.
+// import React, from 'react'; // use for stateless static mockup
 import React, { Component } from 'react';
+// then inject the html code inside the div container. the final part is to export the const Static
+import { Menu, Button, Container, Card, Header } from 'semantic-ui-react';
 
 class Static extends Component {
 	state = {
