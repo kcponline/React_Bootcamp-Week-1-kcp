@@ -122,18 +122,18 @@ const NowOpenStall = (props) => {
 const Openchargercount = (props) => {
 	console.log('parent properties', props);
 	return (
-		<ul className="name">
+		<Header as='h3' inverted>
 			{props.openchargercount > 0 && `${props.openchargercount} OPEN CHARGER`}
-		</ul>
+		</Header>
 	);
 }
 
 const Openstallcount = (props) => {
 	console.log('parent properties', props);
 	return (
-		<ul className="name">
+		<Header as='h3' inverted>
 			{props.openstallcount > 0 && `${props.openstallcount} OPEN STALL`}
-		</ul>
+		</Header>
 	);
 }
 
@@ -176,14 +176,20 @@ const Openstallcount = (props) => {
 
 const Banner = () => {
 	return (
-		<div className="banner">
-			<Headline 
-				title={"EV Angel"}
-			/>
-			<Tagline 
-				title={"Helping you to get your EV Charging"}
-			/>
-		</div>
+		<Grid container style={{ padding: '5em 0em' }}>
+			<Grid.Row>
+			  <Grid.Column>
+			    <Header as='h1' dividing>
+					<Headline 
+						title={"EV Angel"}
+					/>
+					<Tagline 
+						title={"Helping you to get your EV Charging"}
+					/>
+			    </Header>
+			  </Grid.Column>
+			</Grid.Row>
+		</Grid>
 	);
 }
 
