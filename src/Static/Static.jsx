@@ -66,7 +66,7 @@ class Static extends Component {
 					openstallcount={openstallcount}
 				/>
 				<Banner />
-				<ChargerList 
+				<CardList 
 					chargers={chargers}
 					updateChargerName={this.updateChargerName}
 		            updateOpenChargerCount={this.updateOpenChargerCount}
@@ -215,11 +215,11 @@ const Tagline = (bannerprops) => {
 	);
 }
 
-const ChargerList = (props) => {
+const CardList = (props) => {
 	// console.log just to make sure that the props are passing down correctly
 	console.log('chargers: ', props);
 	return (
-		<div className="row">
+		<Card.Group itemsPerRow={3}>
 			{
 			props.chargers.map((charger, index) => (
 				<ChargerCard
@@ -233,7 +233,7 @@ const ChargerList = (props) => {
 				/>
 			))
 			}
-		</div>
+		</Card.Group>
 	);
 }
 
