@@ -240,21 +240,19 @@ const CardList = (props) => {
 const ChargerCard = (props) => {
 	console.log('charging: ', props.charging);
 	return (
-		<div className="col">
-			<h2>
-				CHARGER NO. {props.station}
-			</h2>
-			<h1>
-				STATUS: {props.chargerStatus}
-			</h1>		
-			<ChargingState
-				station={props.station}
-				charging={props.charging}
-				updateChargerName={props.updateChargerName}
-				updateOpenChargerCount={props.updateOpenChargerCount}
-	            updateChargerState={props.updateChargerState}
-			/>
-		</div>
+		<Card align='center'
+			header={props.station}
+			meta={props.chargerStatus}
+			extra={
+				<ChargingState
+					station={props.station}
+					charging={props.charging}
+					updateChargerName={props.updateChargerName}
+					updateOpenChargerCount={props.updateOpenChargerCount}
+		            updateChargerState={props.updateChargerState}
+				/>
+			}
+		/>
 	);
 }
 
