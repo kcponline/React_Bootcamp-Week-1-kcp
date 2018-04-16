@@ -59,7 +59,7 @@ class Static extends Component {
 		const { chargername, stallname, openchargercount, openstallcount, chargers } = this.state;
 		return (
 			<div>
-				<Header 
+				<InfoHeader // 1) in semantic-ui, Header is used in library and so the css name Header has to change to InfoHeader
 					chargername={chargername}
 					stallname={stallname}
 					openchargercount={openchargercount}
@@ -78,23 +78,26 @@ class Static extends Component {
 	}
 }
 // static component
-const Header = (props) => {
-	return (
-		<header className="main-header">
+const InfoHeader = (props) => {
+	return ( // 2) replace div with Menu
+    <Menu size='huge' inverted borderless>
+      <Menu.Item position='left'>
 			<NowOpenCharger 
 				chargername={props.chargername}
 			/>
 			<NowOpenStall 
 				stallname={props.stallname}
 			/>
+      </Menu.Item>
+      <Menu.Item position='right'>
 			<Openchargercount 
 				openchargercount={props.openchargercount}
 			/>
 			<Openstallcount 
 				openstallcount={props.openstallcount}
 			/>
-
-		</header>
+      </Menu.Item>
+    </Menu>
 	);
 }
 
