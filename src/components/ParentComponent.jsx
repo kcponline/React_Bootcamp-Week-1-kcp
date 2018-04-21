@@ -6,29 +6,29 @@ import InfoHeader from './InfoHeader/InfoHeader';
 import CardList from './CardList/CardList';
 
 class ParentComponent extends Component {
-	// state = {
-	// 	chargername: "2",
-	// 	stallname: "L1 L2",
-	// 	openchargercount: 3,
-	// 	openstallcount: 7,
-	// 	chargers: [
-	// 		{
-	// 		station: "1",
-	// 		chargerStatus: "STALL 1",
-	// 		charging: true
-	// 		},
-	// 		{
-	// 		station: "2",
-	// 		chargerStatus: "OPEN",
-	// 		charging: false
-	// 		},
-	// 		{
-	// 		station: "3",
-	// 		chargerStatus: "RIGHT 2",
-	// 		charging: true
-	// 		},
-	// 	]
-	// }
+	state = {
+		chargername: "2",
+		stallname: "L1 L2",
+		openchargercount: 3,
+		openstallcount: 7,
+		chargers: [
+			{
+			station: "1",
+			chargerStatus: "STALL 1",
+			charging: true
+			},
+			{
+			station: "2",
+			chargerStatus: "OPEN",
+			charging: false
+			},
+			{
+			station: "3",
+			chargerStatus: "RIGHT 2",
+			charging: true
+			},
+		]
+	}
 
 	updateChargerName = (chargername) => {
 	// console.log('open charger name:', chargername);
@@ -47,7 +47,7 @@ class ParentComponent extends Component {
 	render() {
 		console.log ('parent component props', this.props);
 		// below is destructuring
-		const { chargername, stallname, openchargercount, openstallcount, chargers } = this.props;
+		const { chargername, stallname, openchargercount, openstallcount, chargers } = this.state;
 		return (
 			<div>
 				<InfoHeader
@@ -73,13 +73,7 @@ class ParentComponent extends Component {
 
 function mapStateToProps(state) {
 	console.log ('map state to props', state);
-	return {
-		chargers: state.chargers,
-		chargername: state.toolbar.chargername,
-		stallname: state.toolbar.stallname,
-		openchargercount: state.toolbar.openchargercount,
-		openstallcount: state.toolbar.openstallcount
-	};
+	// return state;
 }
 
 export default connect(mapStateToProps)(ParentComponent);
