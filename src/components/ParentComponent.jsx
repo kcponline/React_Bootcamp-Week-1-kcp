@@ -73,7 +73,7 @@ class ParentComponent extends Component {
 
 function mapStateToProps(state) {
 	console.log ('map state to props', state);
-	// return state;
+	return {};
 }
 
 export default connect(mapStateToProps)(ParentComponent);
