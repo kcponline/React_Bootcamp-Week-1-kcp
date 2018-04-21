@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Container } from 'semantic-ui-react';
 
 import InfoHeader from './InfoHeader/InfoHeader';
@@ -68,4 +69,9 @@ class ParentComponent extends Component {
 	}
 };
 
-export default ParentComponent;
+function mapStateToProps(state) {
+	console.log ('map state to props', state);
+	return state;
+}
+
+export default connect(mapStateToProps)(ParentComponent);
