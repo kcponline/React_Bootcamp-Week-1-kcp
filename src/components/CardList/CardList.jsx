@@ -31,4 +31,4 @@ const mapStateToProps =(state) => {
 	}
 }
 
-export default connect()(CardList);
+export default connect(mapStateToProps)(CardList);

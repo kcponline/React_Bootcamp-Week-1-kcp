@@ -69,7 +69,7 @@ class ParentComponent extends Component {
 function mapStateToProps(state) {
 	console.log ('map state to props', state);
 	return {
-		chargers: state.chargers,
+		
 		chargername: state.toolbar.chargername,
 		stallname: state.toolbar.stallname,
 		openchargercount: state.toolbar.openchargercount,
