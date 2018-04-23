@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Card } from 'semantic-ui-react';
 
 import ChargerCard from './ChargerCard';
@@ -24,4 +25,10 @@ const CardList = (props) => {
 	);
 };
 
-export default CardList;
+const mapStateToProps =(state) => {
+	return {
+		chargers: state.chargers
+	}
+}
+
+export default connect()(CardList);
