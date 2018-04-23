@@ -58,12 +58,7 @@ class ParentComponent extends Component {
 				/>
 				
 				<Container>
-					<CardList 
-						chargers={chargers}
-						updateChargerName={this.updateChargerName}
-			            updateOpenChargerCount={this.updateOpenChargerCount}
-			            updateChargerState={this.updateChargerState}
-					/>
+					<CardList />
 				</Container>
 
 			</div>
