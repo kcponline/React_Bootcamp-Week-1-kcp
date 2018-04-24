@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux'; use only for testing connect in ParentComponent
 import { Container } from 'semantic-ui-react';
 
 import InfoHeader from './InfoHeader/InfoHeader';
@@ -50,13 +50,7 @@ class ParentComponent extends Component {
 		const { chargername, stallname, openchargercount, openstallcount, chargers } = this.props;
 		return (
 			<div>
-				<InfoHeader
-					chargername={chargername}
-					stallname={stallname}
-					openchargercount={openchargercount}
-					openstallcount={openstallcount}
-				/>
-				
+				<InfoHeader />
 				<Container>
 					<CardList />
 				</Container>
@@ -65,16 +59,16 @@ class ParentComponent extends Component {
 		);
 	}
 };
-
-function mapStateToProps(state) {
-	console.log ('map state to props', state);
-	return {
+// function below is only for testing connect
+// function mapStateToProps(state) {
+// 	console.log ('map state to props', state);
+// 	return {
 		
-		chargername: state.toolbar.chargername,
-		stallname: state.toolbar.stallname,
-		openchargercount: state.toolbar.openchargercount,
-		openstallcount: state.toolbar.openstallcount
-	};
-}
-
-export default connect(mapStateToProps)(ParentComponent);
+// 		chargername: state.toolbar.chargername,
+// 		stallname: state.toolbar.stallname,
+// 		openchargercount: state.toolbar.openchargercount,
+// 		openstallcount: state.toolbar.openstallcount
+// 	};
+// }
+// export default connect(mapStateToProps)(ParentComponent);
+export default ParentComponent;

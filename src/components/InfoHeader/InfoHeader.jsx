@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Menu, Grid } from 'semantic-ui-react';
 
 import NowOpenCharger from './NowOpenCharger';
@@ -7,6 +8,7 @@ import OpenChargerCount from './OpenChargerCount';
 import OpenStallCount from './OpenStallCount';
 
 const InfoHeader = (props) => {
+		console.log('infoheader props', props);
 	return (
     <Menu size='huge' inverted borderless>
       <Menu.Item position='left'>
@@ -37,4 +39,13 @@ const InfoHeader = (props) => {
 	);
 };
 
-export default InfoHeader;
+const mapStateToProps = (state) => {
+	return {
+		chargername: state.toolbar.chargername,
+		stallname: state.toolbar.stallname,
+		openchargercount: state.toolbar.openchargercount,
+		openstallcount: state.toolbar.openstallcount
+	}
+}
+
+export default connect(mapStateToProps)(InfoHeader);
