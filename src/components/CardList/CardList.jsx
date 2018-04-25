@@ -17,7 +17,7 @@ const CardList = (props) => {
 					station={charger.station}
 					chargerStatus={charger.chargerStatus}
 					charging={charger.charging}
-					updateChargerName={() => dispatch(updateChargerName(charger.station))}
+					updateChargerName={() => props.dispatch(updateChargerName(charger.station))}
 		            updateOpenChargerCount={null}
 		            updateChargerState={null}
 				/>
