@@ -4,7 +4,7 @@ import { Card } from 'semantic-ui-react';
 import ChargingState from './ChargingState';
 
 const ChargerCard = (props) => {
-	console.log('charging: ', props.charging);
+	// console.log('charging: ', props.charging);
 	return (
 		<Card align='center'
 			header={props.station}
