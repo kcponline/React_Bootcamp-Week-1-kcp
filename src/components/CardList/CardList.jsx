@@ -17,9 +17,9 @@ const CardList = (props) => {
 					station={charger.station}
 					chargerStatus={charger.chargerStatus}
 					charging={charger.charging}
-					updateChargerName={props.updateChargerName}
-		            updateOpenChargerCount={props.updateOpenChargerCount}
-		            updateChargerState={props.updateChargerState}
+					updateChargerName={null}
+		            updateOpenChargerCount={null}
+		            updateChargerState={null}
 				/>
 			))
 			}
