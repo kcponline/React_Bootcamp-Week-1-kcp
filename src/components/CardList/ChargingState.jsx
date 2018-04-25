@@ -7,9 +7,9 @@ const ChargingState = (props) => {
 			fluid
 			color={props.charging ? 'green' : 'blue'}
 			onClick={() => {
-				props.updateChargerName(props.station)
-				props.updateOpenChargerCount()
-	            props.updateChargerState(props.charging)
+				props.updateChargerName()
+				// props.updateOpenChargerCount()
+	            // props.updateChargerState()
 			}}
 		>
 			{props.charging ? 'CHARGING' : 'OPEN'}
