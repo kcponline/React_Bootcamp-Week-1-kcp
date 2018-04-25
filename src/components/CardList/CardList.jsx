@@ -6,7 +6,7 @@ import { Card } from 'semantic-ui-react';
 import ChargerCard from './ChargerCard';
 
 const CardList = (props) => {
-	console.log('updateChargerName', updateChargerName)
+	// console.log('updateChargerName', updateChargerName)
 	console.log('CardList props: ', props);
 	return (
 		<Card.Group itemsPerRow={3}>
@@ -17,7 +17,7 @@ const CardList = (props) => {
 					station={charger.station}
 					chargerStatus={charger.chargerStatus}
 					charging={charger.charging}
-					updateChargerName={null}
+					updateChargerName={() => dispatch(updateChargerName(charger.station))}
 		            updateOpenChargerCount={null}
 		            updateChargerState={null}
 				/>
