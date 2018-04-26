@@ -8,7 +8,6 @@ import OpenChargerCount from './OpenChargerCount';
 import OpenStallCount from './OpenStallCount';
 
 const InfoHeader = (props) => {
-		console.log('infoheader props', props);
 	return (
     <Menu size='huge' inverted borderless>
       <Menu.Item position='left'>
