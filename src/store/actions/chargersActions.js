@@ -1,8 +1,8 @@
 export const updateChargerName = (chargername) => {
 	console.log('UPDATE CHARGER ACTION', chargername);
 	return {
-		type: 'UPDATE_CURRENT_CHARGER'
-		// payload: chargername
+		type: 'UPDATE_CURRENT_CHARGER',
+		payload: chargername
 	}
 }
 

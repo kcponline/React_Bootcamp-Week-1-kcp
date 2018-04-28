@@ -6,5 +6,10 @@ const initialValue = {
 };
 
 export default (state = initialValue, action) => {
-	return state;
+	switch (action.type) {
+		case 'UPDATE_CURRENT_CHARGER':
+			return { ...state, chargername: action.payload }
+		default:
+			return state;
+	}
 };
